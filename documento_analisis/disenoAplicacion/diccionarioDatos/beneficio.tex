@@ -1,0 +1,77 @@
+\title{\textbf{
+Tabla de diccionario de datos Beneficio
+}} \\
+
+El cuadro \ref{table:dic-Beneficio} indica la descripción correspondiente de la entidad Beneficio.
+\label{Entidad-Beneficio}
+\FloatBarrier
+\begin{table}[htb]
+\setlength\extrarowheight{2pt}
+\begin{tabular}{|p{2.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{5.5cm}|}
+	\hline
+	\multicolumn{2}{|c|} 
+	{{
+		\cellcolor[HTML]{00009B}{\color[HTML]{FFFFFF} Nombre de la relación: }		
+	}} &
+	\multicolumn{4}{|c|} {{ Beneficio }} \\
+	\hline
+	\multicolumn{2}{|c|} 
+	{{
+		\cellcolor[HTML]{00009B}{\color[HTML]{FFFFFF} Objetivo: }		
+	}} &
+	\multicolumn{4}{|c|} {{ Tabla que almacenará las marcas que existen en la tienda. }} \\
+	\hline
+	\rowcolor[HTML]{3166FF} 
+	{\color[HTML]{FFFFFF} Campo }  & 
+	{\color[HTML]{FFFFFF} Tipo de dato } & 
+	{\color[HTML]{FFFFFF} Tamaño } & 
+	{\color[HTML]{FFFFFF} Constraint } & 
+	{\color[HTML]{FFFFFF} No nulo } & 
+	{\color[HTML]{FFFFFF} Descripción } \\ 
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} id\_beneficio } &
+	smallint &
+	5 &
+	PK &
+	X  & 
+	Identificador del beneficio. \\ 
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} descripcion } &
+	text &
+	 &
+	 &
+	X  & 
+	Descripción del beneficio.   \\ 
+	\hline		
+
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} porcentaje } &
+	smallint &
+	5 &
+	 &
+	X  & 
+	Porcentaje de descuento.   \\ 
+	\hline		
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} gratificacion  } &
+	smallint &
+	5 &
+	 &
+	X  & 
+	Porcentaje del precio del producto que se otorgará a un cliente como recompensa de su compra.  \\ 
+	\hline	
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} producto\_gratis  } &
+	char &
+	1 &
+	 &
+	X  & 
+	Indica si el beneficio incluye un producto gratis.   \\ 
+	\hline	
+			
+\end{tabular}
+
+\caption{Tabla de diccionario de datos Beneficio. }
+\label{table:dic-Beneficio}
+\end{table}
+\FloatBarrier
+
+
+

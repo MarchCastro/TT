@@ -1,0 +1,60 @@
+\title{\textbf{
+Tabla de diccionario de datos Categoría
+}} \\
+
+El cuadro \ref{table:dic-Categoria} indica la descripción correspondiente de la entidad Categoría.
+\label{Entidad-Categoria}
+\FloatBarrier
+\begin{table}[htb]
+\setlength\extrarowheight{2pt}
+\begin{tabular}{|p{2.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{5.5cm}|}
+	\hline
+	\multicolumn{2}{|c|}
+	{{
+		\cellcolor[HTML]{00009B}{\color[HTML]{FFFFFF} Nombre de la relación: }		
+	}} &
+	\multicolumn{4}{|c|} {{  Categoría }} \\
+	\hline
+	\multicolumn{2}{|c|} 
+	{{
+		\cellcolor[HTML]{00009B}{\color[HTML]{FFFFFF} Objetivo: }		
+	}} &
+	\multicolumn{4}{|p{10cm}|} {{ Tabla que almacenará los distintos tipos de categorías tanto para productos como para tiendas. }} \\
+	\hline
+	\rowcolor[HTML]{3166FF}
+	{\color[HTML]{FFFFFF} Campo }  & 
+	{\color[HTML]{FFFFFF} Tipo de dato } & 
+	{\color[HTML]{FFFFFF} Tamaño } & 
+	{\color[HTML]{FFFFFF} Constraint } & 
+	{\color[HTML]{FFFFFF} No nulo } & 
+	{\color[HTML]{FFFFFF} Descripción } \\ 
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} id\_categoria } &
+	integer &
+	10 &
+	PK &
+	X  & 
+	Identificador de la categoría. \\
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} fk\_id\_padre\_cat } &
+	integer &
+	10 &
+	FK &
+	X  & 
+	Identificador de la categoría padre. \\
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} nombre } &
+	varchar &
+	50 &
+	 &
+	X  & 
+	Nombre de la categoría. \\
+	\hline
+\end{tabular}
+
+\caption{Tabla de diccionario de datos Categoría. }
+\label{table:dic-Categoria}
+\end{table}
+\FloatBarrier
+
+

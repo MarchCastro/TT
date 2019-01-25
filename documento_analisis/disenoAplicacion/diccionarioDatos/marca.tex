@@ -1,0 +1,69 @@
+\title{\textbf{
+Tabla de diccionario de datos Marca
+}}
+
+El cuadro \ref{table:dic-Marca} indica la descripción correspondiente de la entidad Marca.
+
+\label{Entidad-Marca}
+\FloatBarrier
+\begin{table}[htb]
+\setlength\extrarowheight{2pt}
+\begin{tabular}{|p{2.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{5.5cm}|}
+	\hline
+	\multicolumn{2}{|c|} 
+	{{
+		\cellcolor[HTML]{00009B}{\color[HTML]{FFFFFF} Nombre de la relación: }		
+	}} &
+	\multicolumn{4}{|c|} {{ Marca }} \\
+	\hline
+	\multicolumn{2}{|c|} 
+	{{
+		\cellcolor[HTML]{00009B}{\color[HTML]{FFFFFF} Objetivo: }		
+	}} &
+	\multicolumn{4}{|c|} {{ Tabla que almacenará las marcas que existen en la tienda. }} \\
+	\hline
+	\rowcolor[HTML]{3166FF} 
+	{\color[HTML]{FFFFFF} Campo }  & 
+	{\color[HTML]{FFFFFF} Tipo de dato } & 
+	{\color[HTML]{FFFFFF} Tamaño } & 
+	{\color[HTML]{FFFFFF} Constraint } & 
+	{\color[HTML]{FFFFFF} No nulo } & 
+	{\color[HTML]{FFFFFF} Descripción } \\ 
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} id\_marca } &
+	integer &
+	10 &
+	PK &
+	X  & 
+	Identificador de la marca del producto. \\ 
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} nombre } &
+	varchar &
+	80 &
+	 &
+	X  & 
+	Nombre de la marca.   \\ 
+	\hline		
+	
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} popularidad } &
+	smallint &
+	5 &
+	 &
+	X  & 
+	Entero que representa la popularidad de la marca basado en sus ventas.  \\ 
+	\hline		
+	
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} imagen } &
+	varchar &
+	250 &
+	 &
+	X  & 
+	Ruta en la cuál se encuentra almacenada la imagen de la marca.   \\ 
+	\hline		
+			
+\end{tabular}
+\caption{Tabla de diccionario de datos Marca. }
+\label{table:dic-Marca}
+\end{table}
+\FloatBarrier
+

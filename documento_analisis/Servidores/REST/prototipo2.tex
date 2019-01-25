@@ -1,0 +1,111 @@
+%--------------------------------------------------
+\subsection{Prototipo 2: Integración de algoritmo de agrupamiento K-medias}
+
+\subsubsection{Análisis}
+Dentro del análisis para el desarrollo de este prototipo se incorporan los siguientes requerimientos funcionales:
+\begin{itemize}
+	\item \hyperlink{RFSGPyPDR}{RFGPPR15 Ejecutar algoritmo de agrupamiento.}
+	\item \hyperlink{RFSGPyPDR}{RFGPPR16 Obtener clusters y características.}
+
+\end{itemize}
+
+definidos previamente en el capítulo del ``Bosquejo general de la aplicación''  con el título de ``Requerimientos funcionales del Sistema de Gestión, Procesamiento y Proveedor de Datos Retail''. \\ \par
+
+%--------------------------------------------------
+\subsubsection{Diseño}
+Dentro de esta subsección se encuentra la documentación de los servicios REST separados por requerimientos. \\ \\
+\textit{Nota: En algunos servicios se hace uso de una notación específica ([texto, tipo de dato]), esta notación significa que el contenido del lado izquierdo de la coma es dinámico, por otro lado, el contenido derecho es el tipo de dato que debe ser el contenido dinámico.} 
+\\\\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{\textbf{RFGPPR15 Ejecutar algoritmo de agrupamiento.}
+\begin{itemize}
+\item Ruta: /administrador/execute-cluster
+\begin{itemize}
+\item Método: GET
+\item Respuesta exitosa:
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+    "users": [
+	{
+		"posicion" : string,
+		"grupo" : integer,	
+		"posicion_geografica" : [float, float]
+	},...    
+    ],
+   	"number_of_clusters" : integer
+   	"info_clusters": [
+		{
+			"label" : string
+			"edad_promedio" : float,
+			"meses_registro": string
+			"estado_civil" : {}
+			"sexo" : {}
+			"Gusto1": {"0" : integer, "1" : integer}
+			.
+			.
+			.
+			"Guston" : {"0" : integer, "1" : integer}		
+		}, ...
+		   	
+   	]
+
+}
+\end{lstlisting}
+
+\item Respuesta erronea:
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+    "message": "string",
+}
+\end{lstlisting}
+\end{itemize}
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{\textbf{RFGPPR16 Obtener clusters y características.}
+\begin{itemize}
+\item Ruta: /administrador/get-stored-cluster
+\begin{itemize}
+\item Método: GET
+\item Respuesta exitosa:
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+    "users": [
+	{
+		"posicion" : string,
+		"grupo" : integer,	
+		"posicion_geografica" : [float, float]
+	},...    
+    ],
+   	"number_of_clusters" : integer
+   	"info_clusters": [
+		{
+			"label" : string
+			"edad_promedio" : float,
+			"meses_registro": string
+			"estado_civil" : {}
+			"sexo" : {}
+			"Gusto1": {"0" : integer, "1" : integer}
+			.
+			.
+			.
+			"Guston" : {"0" : integer, "1" : integer}		
+		}, ...
+		   	
+   	]
+
+}
+\end{lstlisting}
+
+\item Respuesta erronea:
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+    "message": "string",
+}
+\end{lstlisting}
+\end{itemize}
+\end{itemize}
+
+
+

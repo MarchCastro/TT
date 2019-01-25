@@ -1,0 +1,83 @@
+\title{\textbf{
+Tabla de diccionario de datos Dirección
+}}\\
+
+El cuadro \ref{table:dic-Direccion2} indica la descripción correspondiente de la entidad Drección del prototipo 1.2.
+\label{Entidad-Direccion}
+\FloatBarrier
+\begin{table}[htb]
+\setlength\extrarowheight{2pt}
+\begin{tabular}{|p{3.2cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{5.5cm}|}
+	\hline
+	\multicolumn{2}{|c|} 
+	{{
+		\cellcolor[HTML]{00009B}{\color[HTML]{FFFFFF} Nombre de la relación: }		
+	}} &
+	\multicolumn{4}{|c|} {{ Dirección }} \\
+	\hline
+	\multicolumn{2}{|c|} 
+	{{
+		\cellcolor[HTML]{00009B}{\color[HTML]{FFFFFF} Objetivo: }		
+	}} &
+	\multicolumn{4}{|c|} {{ Tabla que almacenará la dirección de una persona o tienda. }} \\
+	\hline
+	\rowcolor[HTML]{3166FF} 
+	{\color[HTML]{FFFFFF} Campo }  & 
+	{\color[HTML]{FFFFFF} Tipo de dato } & 
+	{\color[HTML]{FFFFFF} Tamaño } & 
+	{\color[HTML]{FFFFFF} Constraint } & 
+	{\color[HTML]{FFFFFF} No nulo } & 
+	{\color[HTML]{FFFFFF} Descripción } \\ 
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} id\_direccion } &
+	bigint &
+	20 &
+	PK &
+	X  & 
+	Identificador de la dirección del cliente.   \\ 
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} colonia } &
+	varchar &
+	100 &
+	 &
+	X  & 
+	Nombre de las colonias dentro pertenecientes a un código postal.   \\ 
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} delegacion\_municipio } &
+	varchar &
+	50 &
+	 &
+	  & 
+	Nombre de la delegación perteneciente a la Ciudad de México o municipio perteneciente a un estado.\\ 
+	\hline
+	
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} ciudad\_estado } &
+	varchar &
+	50 &
+	 &
+	X  & 
+	Nombre de la ciudad(Ciudad de México) o estado perteneciente a la República Mexicana. \\ 
+	\hline
+	
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} codigo\_postal } &
+	varchar &
+	5 &
+	 &
+	X  & 
+	Código postal dentro de la República Mexicana. \\ 
+	\hline
+	
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} calle } &
+	varchar &
+	100 &
+	 &
+	X  & 
+	Nombre de la calle perteneciente a la dirección. \\ 
+	\hline
+	
+\end{tabular}
+\caption{Tabla de diccionario de datos Dirección del prototipo 1.2. }
+\label{table:dic-Direccion2}
+\end{table}
+\FloatBarrier
+

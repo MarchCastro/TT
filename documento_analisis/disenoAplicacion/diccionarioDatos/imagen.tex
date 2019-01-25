@@ -1,0 +1,51 @@
+\title{\textbf{
+Tabla de diccionario de datos Imagen\_producto 
+}} \\
+
+El cuadro \ref{table:dic-ImagenPro} indica la descripción correspondiente de la entidad Imagen\_producto.
+\label{Entidad-Imagen_producto}
+\FloatBarrier
+\begin{table}[htb]
+\setlength\extrarowheight{2pt}
+\begin{tabular}{|p{2.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{5.5cm}|}
+	\hline
+	\multicolumn{2}{|c|}
+	{{
+		\cellcolor[HTML]{00009B}{\color[HTML]{FFFFFF} Nombre de la relación: }		
+	}} &
+	\multicolumn{4}{|c|} {{  Imagen\_producto }} \\
+	\hline
+	\multicolumn{2}{|c|} 
+	{{
+		\cellcolor[HTML]{00009B}{\color[HTML]{FFFFFF} Objetivo: }		
+	}} &
+	\multicolumn{4}{|c|} {{ Tabla que almacenará las rutas de las imágenes de productos. }} \\
+	\hline
+	\rowcolor[HTML]{3166FF}
+	{\color[HTML]{FFFFFF} Campo }  & 
+	{\color[HTML]{FFFFFF} Tipo de dato } & 
+	{\color[HTML]{FFFFFF} Tamaño } & 
+	{\color[HTML]{FFFFFF} Constraint } & 
+	{\color[HTML]{FFFFFF} No nulo } & 
+	{\color[HTML]{FFFFFF} Descripción } \\ 
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} id\_imagen\_producto } &
+	bigint &
+	20 &
+	PK &
+	X  & 
+	Identificador de la imagen del producto. \\
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} ruta } &
+	varchar &
+	250 &
+	 &
+	X  & 
+	Ruta en el servidor de la ubicación de la imagen. \\
+	\hline
+\end{tabular}
+\caption{Tabla de diccionario de datos Imagen\_producto. }
+\label{table:dic-ImagenPro}
+\end{table}
+\FloatBarrier
+

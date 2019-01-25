@@ -1,0 +1,106 @@
+
+%--------------------------------------------------
+\section{Elección de tecnologías}
+
+La explicación de la elección de las tecnologías se encuentra dividida en 3 secciones: gestor de base de datos, sistema operativo para las aplicaciones interactivas y lenguajes de programación para el desarrollo de los servidores. \\ \par
+
+El cuadro \ref{table:comparacion-sql} muestra de forma comparativa, 3 posibles opciones de sistemas gestores de bases de datos relacionales.
+
+\FloatBarrier
+\begin{table}[htb]
+\setlength\extrarowheight{2pt} % for a bit of visual "breathing space"
+\begin{tabularx}{\textwidth}{|C|C|C|}
+\hline
+\textbf{SQL Server} & \textbf{Mysql} & \textbf{PostgreSQL} 
+\\ \hline
+Desarrollado por Microsoft.  & Desarrollado por Oracle.  & Desarrollado por PostgreSQL Global Development Group.
+\\ \hline
+Licencia comercial. & Licencia de código abierto. & Licencia de código abierto.
+\\ \hline
+Utiliza un motor que es un poco más lento y pesado en recursos, pero cumple totalmente con las características de los parámetros que permiten clasificar las transacciones de los sistemas de gestión de bases de datos. Atomicidad, consistencia, aislamiento y durabilidad. & Compatible con una amplia gama de motores e interfaces; una de las bases de datos más maduras en el mercado. & Se adhiere bien a los estándares actuales de SQL, como resultado es más fácil de aprender.
+\\ \hline
+Sistema de informes extremadamente completo / personalización de almacenamiento. & Ligero. & Implementa funciones avanzadas de análisis de negocios y de ubicación.
+\\ \hline
+Alto grado de control sobre transacciones y procedimientos. & Una de las herramientas de base de datos más populares; fácil de encontrar soporte en línea. & Gran variedad de datos y tipos de caracteres.
+\\ \hline
+Puede ajustar las funciones de seguridad, como quién puede ejecutar cada procedimiento almacenado, quién puede acceder a los datos, etc. & Seguridad limitada en comparación con algunos otros sistemas de bases de datos. & La replicación de datos está pobremente implementada.
+\\ \hline
+Los cambios de esquema no bloquean las tablas. & Experimenta una degradación significativa del rendimiento a gran escala. & No es adecuado para proyectos de baja concurrencia.
+\\ \hline
+\end{tabularx}
+\caption{Comparación de sistemas gestores de bases de datos \cite{SQL1} \cite{SQL2}. }
+\label{table:comparacion-sql}
+\end{table}
+\FloatBarrier
+
+Para el desarrollo del proyecto se decidió elegir PostgreSQL por 2 aspectos importantes, en primera, cuenta con una gran cantidad de tipos de datos, entre los cuales se encuentran arreglos, JSON (JavaScript Object Notation) y uno en especial de tipo geométrico, Point, para guardar coordenadas de tipo (x,y) como números de coma flotante, lo cual nos ayuda bastante para guardar la geolocalización de los Beacons disponibles.  \\
+
+Por otro lado, posee una gran escalabilidad. Es capaz de ajustarse al número de Unidades de Procesamiento Central (Central Processing Unit, por sus siglas en inglés CPU) y a la cantidad de memoria que posee el sistema de forma óptima, haciéndole capaz de soportar una mayor cantidad de peticiones simultáneas de manera correcta \cite{SQL1}.  \\
+
+Para la elección del sistema operativo móvil, en el cuadro \ref{table:comparacion-soMovil} se muestran algunas ventajas y desventajas del desarrollo de aplicaciones móviles para dispositivos con sistemas operativo iOS y Android.
+
+\FloatBarrier
+\begin{table}[htb]
+\setlength\extrarowheight{2pt} % for a bit of visual "breathing space"
+\begin{tabularx}{\textwidth}{|C|C|}
+\hline
+\textbf{iOS} & \textbf{Android} 
+\\ \hline
+Lenguaje: Objective-C / Swift.  &  Lenguaje: Java.
+\\ \hline
+Última versión:	iOS 11.3.1 - 24 de abril de 2018. & Última versión: Android 8.1.0 ``Oreo'' - 5 de febrero de 2018.
+\\ \hline
+Fuerte cuota de mercado, especialmente en los EE. UU. & Mayor penetración de mercado.
+\\ \hline
+La audiencia es más valiosa. & Proceso de revisión de aplicaciones cortas. El proceso de aprobación y publicación de aplicaciones tarda en promedio 4 horas.
+\\ \hline
+El sistema operativo iOS es más férreo y rígido que Android, al tener más controlado el firmware permite que este sea más seguro que su rival. & Android actualmente posee la mayor plataforma global compartida.
+\\ \hline
+Los usuarios de iOS suelen ser un poco más jóvenes, gastar más dinero en compras desde una aplicación y, por lo general, descargan aplicaciones de negocios, educación y estilo de vida de la tienda de aplicaciones. Gastan un promedio de 4 veces más en una aplicación que los usuarios de Android. & Los usuarios de Android son mucho más conscientes de la relación precio-calidad y descargan aplicaciones que van desde herramientas hasta entretenimiento y categorías de comunicación. Además, prefieren los anuncios integrados en la aplicación que pagar un determinado precio por la misma.
+\\ \hline
+iOS cuenta con una tasa de fragmentación realmente baja. Los datos revelan que casi el 90\% de los usuarios ya tiene iOS 10, es decir, 9 de cada 10 dispositivos que permite el sistema operativo ya poseen la última edición. & Al contar con un gran número de fabricantes que usan el sistema operativo en sus dispositivos, se cuenta con distintas formas y tamaños así como grandes diferencias a nivel de desempeño y tamaños de pantalla. Debido a esto hay muchas versiones activas y para desarrollar una aplicación que sea compatible con todos estos dispositivos es una tarea complicada. La fragmentación da lugar a que muchas marcas personalicen sus propias versiones para ofrecer contenido exclusivo. 
+\\ \hline
+\end{tabularx}
+\caption{Comparación de sistemas operativos móviles \cite{SOMovil1} - \cite{SOMovil5}. }
+\label{table:comparacion-soMovil}
+\end{table}
+\FloatBarrier
+
+La razón principal por la que se optó a usar Android es que cuenta con el 85\% del mercado mundial de teléfonos inteligentes, siguiéndole iOS con el 14.7\% y el 0.3\% restante pertenece a otros \cite{MBAND}.  \\
+
+Finalmente, en el cuadro \ref{table:comparacion-backend} se comparan 3 de los lenguajes de programación más ocupados en servidores.
+
+\FloatBarrier
+\begin{table}[htb]
+\setlength\extrarowheight{2pt} % for a bit of visual "breathing space"
+\begin{tabularx}{\textwidth}{|C|C|C|}
+\hline
+\textbf{PHP} & \textbf{Python} & \textbf{Java} 
+\\ \hline
+PHP es un lenguaje orientado a objetos, se basa en objetos a los que se adjuntan ciertas propiedades, parámetros y métodos. El usuario escribe comandos a los objetos en la interfaz, a los cuales reaccionan los objetos, comenzando ciertas acciones. & Python se atribuye a los lenguajes orientados a aspectos: significa que la escritura del código en Python se reduce a escribir sus módulos individuales, la conexión entre ellos es posteriormente determinada y controlada por las acciones del usuario en la parte frontend. & Lenguaje multi-paradigmático. Combina las características de: \textbf{orientada a objetos}; \textbf{orientada a componentes}: lenguajes basados en la creación de componentes; \textbf{imperativo}: una clase de lenguajes cuya característica es la ejecución estrictamente secuencial de las instrucciones; \textbf{estructurales}: consta de tres estructuras básicas de control: secuencia, bifurcación y ciclo; \textbf{reflexivo}: una clase de idiomas que puede rastrear y cambiar su propia estructura.
+\\ \hline
+En PHP, las bibliotecas y archivos adicionales se cargan manualmente, lo que se considera una característica del lenguaje muy desagradable. & En Python, el proceso de cargar archivos y bibliotecas adicionales se reduce a un simple conjunto de acciones: mover el archivo a la carpeta del programa y escribir algunas líneas de código.  &  Las aplicaciones se pueden compilar en el bytecode intermediario que luego puede ser interpretado por la máquina virtual Java de la plataforma específica.
+\\ \hline
+PHP no tiene reglas como lenguajes compilados o estándares estrictos como se ve con Python, sino más bien estándares disponibles de la comunidad de desarrolladores. & El código de Python se asemeja al pseudocódigo al igual que todos los lenguajes de scripting. El diseño elegante y las reglas de sintaxis de este lenguaje de programación lo hace bastante legible.  &  Java también puede requerir muchos recursos, por lo tanto, más memoria, por ejemplo, en comparación con otros lenguajes.
+\\ \hline
+El manejo de errores es tradicionalmente pobre. Los parámetros de configuración global pueden cambiar la semántica del lenguaje, lo que complica la implementación y la portabilidad. & Sintaxis legible y organizada. Ofrece prototipado rápido y capacidades semánticas dinámicas.  & Java es independiente de la plataforma, gracias a maquina virtual Java Virtual Machine (JVM, por sus siglas en ingles), una máquina de computación abstracta que convierte el código fuente Java a código máquina.
+\\ \hline
+Generalmente se considera menos seguro que los otros lenguajes de programación. & Es notoriamente difícil de escalar a través de múltiples núcleos en una sola máquina. Debido a las limitaciones del Global Interpreter Lock (GIL). Sin embargo, es muy adecuado para aplicaciones que se escalan horizontalmente a través de servidores sin estado, es una buena solución para aplicaciones que aprovechan la nube.  & Java no cambia mucho entre versiones, es fácil de mantener y avanzar compatible con sus versiones futuras. 
+\\ \hline
+\end{tabularx}
+\caption{Comparación de lenguajes de programación ocupados en servidores \cite{BackEnd1} - \cite{BackEnd4}. }
+\label{table:comparacion-backend}
+\end{table}
+\FloatBarrier
+
+
+Para los servidores se eligió el lenguaje Python debido a que existe una gran cantidad de comunidad que ha generado librerías y contenido de forma pública, por mencionar algunas: \\ 
+
+
+\FloatBarrier
+\begin{itemize}
+\item \textbf{Numpy}: es una librería de computación numérica que permite manejar los vectores de una forma muy fácil y eficiente.
+\item \textbf{Scikit-learn}: una librería de aprendizaje maquina en Python que se usará como parte importante en el módulo de recomendaciones para el algoritmo de agrupamiento k-means.
+\item \textbf{Tensorflow y Theano}: Para hacer el procesamiento rápidamente de los algoritmos dentro de la unidad de procesamiento de gráficos y trabajar con grandes cantidades de datos.
+\end{itemize}
+\FloatBarrier

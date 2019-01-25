@@ -1,0 +1,54 @@
+\title{\textbf{
+Tabla de diccionario de datos Tienda\_categoria
+}}\\
+
+El cuadro \ref{table:dic-TiendaCat2} indica la descripción correspondiente de la entidad Tienda\_categoria del prototipo 1.1.
+
+\label{Entidad-Producto_imagen}
+\FloatBarrier
+\begin{table}[htb]
+\setlength\extrarowheight{2pt}
+\begin{tabular}{|p{2.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{5.5cm}|}
+	\hline
+	\multicolumn{2}{|c|}
+	{{
+		\cellcolor[HTML]{00009B}{\color[HTML]{FFFFFF} Nombre de la relación: }		
+	}} &
+	\multicolumn{4}{|c|} {{  Tienda\_categoria }} \\
+	\hline
+	\multicolumn{2}{|c|} 
+	{{
+		\cellcolor[HTML]{00009B}{\color[HTML]{FFFFFF} Objetivo: }		
+	}} &
+	\multicolumn{4}{|c|} {{ Tabla que almacenará la relación entre las tiendas y sus categorías. }} \\
+	\hline
+	\rowcolor[HTML]{3166FF}
+	{\color[HTML]{FFFFFF} Campo }  & 
+	{\color[HTML]{FFFFFF} Tipo de dato } & 
+	{\color[HTML]{FFFFFF} Tamaño } & 
+	{\color[HTML]{FFFFFF} Constraint } & 
+	{\color[HTML]{FFFFFF} No nulo } & 
+	{\color[HTML]{FFFFFF} Descripción } \\ 
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} fk\_id\_tienda } &
+	bigint &
+	20 &
+	PK, FK &
+	X  & 
+	Identificador de la tienda. \\
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} fk\_id\_categoria } &
+	bigint &
+	20 &
+	PK, FK &
+	X  & 
+	Identificador de la categoría. \\
+	\hline
+\end{tabular}
+
+\caption{Tabla de diccionario de datos Tienda\_categoria del prototipo 1.1. }
+\label{table:dic-TiendaCat2}
+
+\end{table}
+\FloatBarrier
+

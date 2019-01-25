@@ -1,0 +1,52 @@
+\title{\textbf{
+Tabla de diccionario de datos Departamento\_anuncio
+}} \\
+
+El cuadro \ref{table:dic-DeptoAnuncio} indica la descripción correspondiente de la entidad Departamento\_anuncio.
+\label{Entidad-Departamento_anuncio}
+\FloatBarrier
+\begin{table}[htb]
+\setlength\extrarowheight{2pt}
+\begin{tabular}{|p{2.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{5.5cm}|}
+	\hline
+	\multicolumn{2}{|c|} 
+	{{
+		\cellcolor[HTML]{00009B}{\color[HTML]{FFFFFF} Nombre de la relación: }		
+	}} &
+	\multicolumn{4}{|c|} {{ Departamento\_anuncio }} \\
+	\hline
+	\multicolumn{2}{|c|} 
+	{{
+		\cellcolor[HTML]{00009B}{\color[HTML]{FFFFFF} Objetivo: }		
+	}} &
+	\multicolumn{4}{|c|} {{ Tabla que almacenará los anunciós de los departamentos. }} \\
+	\hline
+	\rowcolor[HTML]{3166FF} 
+	{\color[HTML]{FFFFFF} Campo }  & 
+	{\color[HTML]{FFFFFF} Tipo de dato } & 
+	{\color[HTML]{FFFFFF} Tamaño } & 
+	{\color[HTML]{FFFFFF} Constraint } & 
+	{\color[HTML]{FFFFFF} No nulo } & 
+	{\color[HTML]{FFFFFF} Descripción } \\ 
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} fk\_id\_departamento } &
+	bigint &
+	20 &
+	FK &
+	X  & 
+	Identificador del departamento.   \\ 
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} fk\_id\_anuncio } &
+	smallint &
+	5 &
+	FK &
+	X  & 
+	Identificador del anuncio.   \\ 
+	\hline		
+\end{tabular}
+
+\caption{Tabla de diccionario de datos Departamento\_anuncio. }
+\label{table:dic-DeptoAnuncio}
+\end{table}
+\FloatBarrier
+

@@ -1,0 +1,57 @@
+\begin{UseCase}{CU1}{Nombre del caso de uso}{
+		Descripción completa
+	}
+	\UCitem{Versión}{1.0 - dd/mm/yy}
+	\UCitem{Autor}{Nombre del autor.}
+	\UCitem{Prioridad}{Baja/Alta}
+	\UCitem{Módulo}{Evaluación}
+	\UCitem{Actor}{Alumno}
+	\UCitem{Propósito}{Objetivo del caso de uso}
+	\UCitem{Entradas}{Seminario a inscribir.}
+	\UCitem{Salidas}{Seminarios registrados, horario actual del Estudiante, desglose del monto a pagar por la inscripción.}
+	\UCitem{Precondiciones}{El estudiante debe estar registrado en la universidad.}
+	\UCitem{Postcondiciones}{El estudiante quedará inscrito en el Seminario seleccionado si es elegible y hay cupo en el Seminario en cuestión.}
+	\UCitem{Reglas del negocio}{\BRref{BR130}{Determinar si un Estudiante puede inscribirse en un Seminario}}	
+	\UCitem{Mensajes}{Mensajes }
+\end{UseCase}
+
+\begin{UseCase}{CUGH1}{Establecer periodo para generar horarios}{Establecer fechas de inicio y fin del periodo que se le da al proceso de generacion de horarios, para que en este puedan realizarse las solicitudes de materias de los profesores, generacion, modificacion y publicacion de horarios, asignacion y modificacion de profesores a materias.}
+		\UCitem{Versión}{1.0}
+		\UCitem{Actor}{Subdirector}
+		\UCitem{Propósito}{Controlar el periodo para tener un mejor control sobre las tareas a realizar.}
+		\UCitem{Resumen}{El sistema muestra una pantalla donde el subdirector podre establecer una fecha de inicio de periodo y una de final, en caso de tener que modificar este periodo el subdirector podra volver a esta pantalla y modificar estas fechas previamente establecidas.}
+		\UCitem{Entradas}{Fecha inicio, fecha fin.}
+		\UCitem{Salidas}{}
+		\UCitem{Precondiciones}{Las fechas del periodo no deben haberse establecido.}
+		\UCitem{Postcondiciones}{}
+		\UCitem{Reglas del negocio}{\BRref{BR130}{Determinar si un Estudiante puede inscribirse en un Seminario}}	
+		\UCitem{Mensajes}{Mensajes }
+		\UCitem{Autor}{Eduardo Espino Maldonado.}
+	\end{UseCase}
+  
+	\begin{UCtrayectoria}{Principal}
+		\UCpaso[\UCactor] Da click en la opcion "Periodo de Generacion de Horarios" vía la \IUref{UI}{Pantalla de Index}\label{CULogin}.
+		\UCpaso           Despliega la tabla de Periodod Escolar en la \IUref{IU}{Consultar Periodo}
+		\UCpaso[\UCactor] Da click en el boton \IUbutton{Gestionar}.
+		\UCpaso           Despliega un Modal con un formulario solicitando: Fecha de Inicio de Periodo, Fecha de Fin de Periodo.
+		\UCpaso[\UCactor] Da click en el boton \IUbutton{Calendario} en Fecha de Inicio de Periodo.
+		\UCpaso           Despliega un calendario marcando la fecha actual por omision.
+		\UCpaso[\UCactor] Da click en el dia que desea asignar como fecha de inicio.     
+		\UCpaso[\UCactor] Da click en el boton \IUbutton{Calendario} en Fecha de Fin de Periodo.
+		\UCpaso           Despliega un calendario marcando la fecha actual por omision.
+		\UCpaso[\UCactor] Da click en el dia que desea asignar como fecha de fin.     
+		\UCpaso[\UCactor] Da click en el boton \IUbutton {Definir}.
+		\UCpaso           Notifica via email a los Jefes de Departamento que el periodo de generacion de horarios se ha establecido (manda fechas de inicio y de fin).
+	\end{UCtrayectoria}
+    
+	\begin{UCtrayectoriaA}{A}{El Subdirector no asigno ninguna fecha al Periodo}
+		\UCpaso 	  Muestra el Mensaje {\bf MSG1-}``Periodo inválido La fecha de fin no puede ser menor a la fecha de inicio''.
+		\UCpaso[\UCactor] Oprime el botón \IUbutton{OK}.
+		\UCpaso[] Termina el caso de uso.
+	\end{UCtrayectoriaA}
+
+	\begin{UCtrayectoriaA}{B}{La feha de fin es menor a la fecha de inicio}
+		\UCpaso 	  Muestra el Mensaje {\bf MSG1-}``Periodo inválido La fecha de fin no puede ser menor a la fecha de inicio''.
+		\UCpaso[\UCactor] Oprime el botón \IUbutton{OK}.
+		\UCpaso[] Termina el caso de uso.
+	\end{UCtrayectoriaA}

@@ -1,0 +1,75 @@
+\title{\textbf{
+Tabla de diccionario de datos Empleado
+}}\\
+
+El cuadro \ref{table:dic-Empleado2} indica la descripción correspondiente de la entidad Empleado del prototipo 1.1.
+\label{Entidad-Empleado}
+\FloatBarrier
+\begin{table}[htb]
+\setlength\extrarowheight{2pt}
+\begin{tabular}{|p{2.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{5.5cm}|}
+	\hline
+	\multicolumn{2}{|c|} 
+	{{
+		\cellcolor[HTML]{00009B}{\color[HTML]{FFFFFF} Nombre de la relación: }		
+	}} &
+	\multicolumn{4}{|c|} {{ Empleado }} \\
+	\hline
+	\multicolumn{2}{|c|} 
+	{{
+		\cellcolor[HTML]{00009B}{\color[HTML]{FFFFFF} Objetivo: }		
+	}} &
+	\multicolumn{4}{|c|} {{ Tabla que almacenará los datos especificos de un empleado. }} \\
+	\hline
+	\rowcolor[HTML]{3166FF} 
+	{\color[HTML]{FFFFFF} Campo }  & 
+	{\color[HTML]{FFFFFF} Tipo de dato } & 
+	{\color[HTML]{FFFFFF} Tamaño } & 
+	{\color[HTML]{FFFFFF} Constraint } & 
+	{\color[HTML]{FFFFFF} No nulo } & 
+	{\color[HTML]{FFFFFF} Descripción } \\ 
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} id\_empleado } &
+	integer &
+	10 &
+	PK &
+	X  & 
+	Identificador del empleado.   \\ 
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} fk\_id\_persona } &
+	bigint &
+	20 &
+	FK &
+	X  & 
+	Identificador de la persona.   \\ 
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} fk\_id\_departamento } &
+	bigint &
+	20 &
+	FK &
+	X  & 
+	Identificador del departamento al que pertecene el empleado.   \\ 
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} rol } &
+	char &
+	1 &
+	 &
+	X  & 
+	Tipo de rol que tiene el empleado (vendedor/administrador).   \\ 
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} nombre\_usuario } &
+	varchar &
+	50 &
+	 &
+	X  & 
+	Nombre de usuario con el que se identifica el empleado.   \\ 
+	
+		
+\end{tabular}
+
+\caption{Tabla de diccionario de datos Empleado del prototipo 1.1 . }
+\label{table:dic-Empleado2}
+
+\end{table}
+\FloatBarrier
+

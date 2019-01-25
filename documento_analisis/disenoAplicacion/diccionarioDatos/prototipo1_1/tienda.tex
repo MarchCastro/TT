@@ -1,0 +1,68 @@
+\title{\textbf{
+Tabla de diccionario de datos Tienda
+}}\\
+
+El cuadro \ref{table:dic-Tienda2} indica la descripción correspondiente de la entidad Tienda del prototipo 1.1.
+
+\label{Entidad-Tienda}
+\FloatBarrier
+\begin{table}[htb]
+\setlength\extrarowheight{2pt}
+\begin{tabular}{|p{2.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{5.5cm}|}
+	\hline
+	\multicolumn{2}{|c|}
+	{{
+		\cellcolor[HTML]{00009B}{\color[HTML]{FFFFFF} Nombre de la relación: }		
+	}} &
+	\multicolumn{4}{|c|} {{ Tienda }} \\
+	\hline
+	\multicolumn{2}{|c|} 
+	{{
+		\cellcolor[HTML]{00009B}{\color[HTML]{FFFFFF} Objetivo: }		
+	}} &
+	\multicolumn{4}{|c|} {{ Tabla que almacenará los datos básicos de una tienda departamental. }} \\
+	\hline
+	\rowcolor[HTML]{3166FF} 
+	{\color[HTML]{FFFFFF} Campo }  & 
+	{\color[HTML]{FFFFFF} Tipo de dato } & 
+	{\color[HTML]{FFFFFF} Tamaño } & 
+	{\color[HTML]{FFFFFF} Constraint } & 
+	{\color[HTML]{FFFFFF} No nulo } & 
+	{\color[HTML]{FFFFFF} Descripción } \\ 
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} id\_tienda } &
+	bigint &
+	20 &
+	PK &
+	X  & 
+	Identificador de la tienda. \\
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} nombre } &
+	varchar &
+	150 &
+	 &
+	X  & 
+	Nombre de la tienda.   \\ 
+	\hline	
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} fk\_id\_direccion } &
+	bigint &
+	20 &
+	 &
+	X & 
+	Identificador de la dirección de la tienda.   \\ 
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} posicion\_geografica } &
+	point &
+	 &
+	 &
+	X  & 
+	Coordenada geográfica en la que se encuentra la tienda.   \\ 
+	\hline	
+\end{tabular}
+
+\caption{Tabla de diccionario de datos Tienda del prototipo 1.1 . }
+\label{table:dic-Tienda2}
+
+\end{table}
+\FloatBarrier
+

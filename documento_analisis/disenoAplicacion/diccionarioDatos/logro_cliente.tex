@@ -1,0 +1,50 @@
+\title{\textbf{
+Tabla de diccionario de datos Logro\_cliente
+}} \\
+
+El cuadro \ref{table:dic-LogroCli} indica la descripción correspondiente de la entidad Logro\_cliente.
+\label{Entidad-Logro_cliente}
+\FloatBarrier
+\begin{table}[htb]
+\setlength\extrarowheight{2pt}
+\begin{tabular}{|p{2.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{5.5cm}|}
+	\hline
+	\multicolumn{2}{|c|} 
+	{{
+		\cellcolor[HTML]{00009B}{\color[HTML]{FFFFFF} Nombre de la relación: }		
+	}} &
+	\multicolumn{4}{|c|} {{ Logro\_cliente }} \\
+	\hline
+	\multicolumn{2}{|c|} 
+	{{
+		\cellcolor[HTML]{00009B}{\color[HTML]{FFFFFF} Objetivo: }	
+	}} &
+	\multicolumn{4}{|c|} {{ Tabla que relaciona los logros con los clientes. }} \\
+	\hline
+	\rowcolor[HTML]{3166FF} 
+	{\color[HTML]{FFFFFF} Campo }  & 
+	{\color[HTML]{FFFFFF} Tipo de dato } & 
+	{\color[HTML]{FFFFFF} Tamaño } & 
+	{\color[HTML]{FFFFFF} Constraint } & 
+	{\color[HTML]{FFFFFF} No nulo } & 
+	{\color[HTML]{FFFFFF} Descripción } \\ 
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} fk\_id\_cliente } &
+	bigint &
+	20 &
+	PK, FK &
+	X  & 
+	Identificador del cliente.  \\ 
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} fk\_id\_logro } &
+	smallint &
+	5 &
+	PK, FK &
+	X  & 
+	Identificador del logro.   \\ 
+	\hline		
+\end{tabular}
+\caption{Tabla de diccionario de datos Logro\_cliente. }
+\label{table:dic-LogroCli}
+\end{table}
+\FloatBarrier

@@ -1,0 +1,69 @@
+\title{\textbf{
+Tabla de diccionario de datos Departamento
+}} \\
+
+El cuadro \ref{table:dic-Departamento} indica la descripción correspondiente de la entidad Departamento.
+\label{Entidad-Departamento}
+\FloatBarrier
+\begin{table}[htb]
+\setlength\extrarowheight{2pt}
+\begin{tabular}{|p{2.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{5.5cm}|}
+	\hline
+	\multicolumn{2}{|c|} 
+	{{
+		\cellcolor[HTML]{00009B}{\color[HTML]{FFFFFF} Nombre de la relación: }		
+	}} &
+	\multicolumn{4}{|c|} {{ Departamento }} \\
+	\hline
+	\multicolumn{2}{|c|} 
+	{{
+		\cellcolor[HTML]{00009B}{\color[HTML]{FFFFFF} Objetivo: }		
+	}} &
+	\multicolumn{4}{|p{10cm}|} {{ Tabla que almacenará los datos especificos de un departamento dentro de la tienda. }} \\
+	\hline
+	\rowcolor[HTML]{3166FF} 
+	{\color[HTML]{FFFFFF} Campo }  & 
+	{\color[HTML]{FFFFFF} Tipo de dato } & 
+	{\color[HTML]{FFFFFF} Tamaño } & 
+	{\color[HTML]{FFFFFF} Constraint } & 
+	{\color[HTML]{FFFFFF} No nulo } & 
+	{\color[HTML]{FFFFFF} Descripción } \\ 
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} id\_departamento } &
+	bigint &
+	20 &
+	PK &
+	X  & 
+	Identificador del departamento.   \\ 
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} fk\_id\_tienda } &
+	bigint &
+	20 &
+	FK &
+	X  & 
+	Identificador de la tienda a la que pertenece el departamento.   \\ 
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} nombre } &
+	varchar &
+	80 &
+	&
+	X  & 
+	Nombre del departamento. \\ 
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} planta } &
+	char &
+	1 &
+	 &
+	X  & 
+	Número de planta en la que se encuentra el departamento. \\  
+	\hline
+				
+\end{tabular}
+
+\caption{Tabla de diccionario de datos Departamento. }
+\label{table:dic-Departamento}
+\end{table}
+\FloatBarrier
+
+
+

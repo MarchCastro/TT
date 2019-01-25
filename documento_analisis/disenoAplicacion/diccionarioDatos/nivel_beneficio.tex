@@ -1,0 +1,50 @@
+\title{\textbf{
+Tabla de diccionario de datos Nivel\_beneficio
+}}\\
+
+El cuadro \ref{table:dic-NivelBeneficio} indica la descripción correspondiente de la entidad Nivel\_beneficio.
+\label{Entidad-Nivel_beneficio}
+\FloatBarrier
+\begin{table}[htb]
+\setlength\extrarowheight{2pt}
+\begin{tabular}{|p{2.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{5.5cm}|}
+	\hline
+	\multicolumn{2}{|c|} 
+	{{
+		\cellcolor[HTML]{00009B}{\color[HTML]{FFFFFF} Nombre de la relación: }		
+	}} &
+	\multicolumn{4}{|c|} {{ Nivel\_beneficio }} \\
+	\hline
+	\multicolumn{2}{|c|} 
+	{{
+		\cellcolor[HTML]{00009B}{\color[HTML]{FFFFFF} Objetivo: }		
+	}} &
+	\multicolumn{4}{|c|} {{ Tabla que relaciona los beneficios con un nivel. }} \\
+	\hline
+	\rowcolor[HTML]{3166FF} 
+	{\color[HTML]{FFFFFF} Campo }  & 
+	{\color[HTML]{FFFFFF} Tipo de dato } & 
+	{\color[HTML]{FFFFFF} Tamaño } & 
+	{\color[HTML]{FFFFFF} Constraint } & 
+	{\color[HTML]{FFFFFF} No nulo } & 
+	{\color[HTML]{FFFFFF} Descripción } \\ 
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} fk\_id\_nivel } &
+	smallint &
+	5 &
+	PK, FK &
+	X  & 
+	Identificador del nivel.  \\ 
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} fk\_id\_beneficio } &
+	smallint &
+	5 &
+	PK, FK &
+	X  & 
+	Identificador del beneficio.   \\ 
+	\hline		
+\end{tabular}
+\caption{Tabla de diccionario de datos Nivel\_beneficio. }
+\label{table:dic-NivelBeneficio}
+\end{table}
+\FloatBarrier

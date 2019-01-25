@@ -1,0 +1,139 @@
+\title{\textbf{
+Tabla de diccionario de datos Producto
+}}\\
+
+El cuadro \ref{table:dic4-Producto} indica la descripción correspondiente de la entidad Producto.
+\label{Entidad-Producto}
+\FloatBarrier
+\begin{table}[htb]
+\setlength\extrarowheight{2pt}
+\begin{tabular}{|p{2.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{5.5cm}|}
+	\hline
+	\multicolumn{2}{|c|} 
+	{{
+		\cellcolor[HTML]{00009B}{\color[HTML]{FFFFFF} Nombre de la relación: }		
+	}} &
+	\multicolumn{4}{|c|} {{ Producto }} \\
+	\hline
+	\multicolumn{2}{|c|} 
+	{{
+		\cellcolor[HTML]{00009B}{\color[HTML]{FFFFFF} Objetivo: }		
+	}} &
+	\multicolumn{4}{|c|} {{ Tabla que almacenará la información general de un producto. }} \\
+	\hline
+	\rowcolor[HTML]{3166FF} 
+	{\color[HTML]{FFFFFF} Campo }  & 
+	{\color[HTML]{FFFFFF} Tipo de dato } & 
+	{\color[HTML]{FFFFFF} Tamaño } & 
+	{\color[HTML]{FFFFFF} Constraint } & 
+	{\color[HTML]{FFFFFF} No nulo } & 
+	{\color[HTML]{FFFFFF} Descripción } \\ 
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} id\_producto } &
+	bigint &
+	20 &
+	PK &
+	X  & 
+	Identificador del producto.   \\ 
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} nombre } &
+	varchar &
+	150 &
+	 &
+	X  & 
+	Nombre del producto.   \\ 
+	\hline		
+	
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} precio\_venta } &
+	decimal &
+	10, 2 &
+	 &
+	X  & 
+	Precio de venta del producto.   \\ 
+	\hline		
+	
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} costo } &
+	decimal &
+	10, 2 &
+	 &
+	X  & 
+	Costo del producto.   \\ 
+	\hline		
+	
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} descripcion } &
+	text &
+	 &
+	 &
+	X  & 
+	Breve descripción del producto.   \\ 
+	\hline		
+	
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} fk\_id\_departamento } &
+	bigint &
+	20 &
+	FK &
+	X  & 
+	Identificador del departamento al que pertenece el producto.   \\ 
+	\hline
+	
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} fk\_id\_categoria } &
+	bigint &
+	20 &
+	FK &
+	X  & 
+	Identificador de la categoría a la que pertenece el producto.   \\ 
+	\hline
+	
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} fk\_id\_marca } &
+	integer &
+	10 &
+	FK &
+	X  & 
+	Identificador de la marca de producto.   \\ 
+	\hline
+	
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} fk\_id\_promocion } &
+	smallint &
+	5 &
+	FK &
+	  & 
+	Identificador de una posible promoción que pueda tener el producto.   \\ 
+	\hline
+	
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} stock } &
+	integer &
+	10 &
+	 &
+	X  & 
+	Número actual de productos disponibles para venta.   \\ 
+	\hline	
+	
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} no\_ventas } &
+	integer &
+	10 &
+	 &
+	X  & 
+	Número de veces que se ha vendido este producto.   \\ 
+	\hline	
+	
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} x } &
+	double[] &
+	 &
+	 &
+	 & 
+	Vector de pesos de un producto el cuál representa las características del mismo.   \\ 
+	\hline
+	
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} mu } &
+	double &
+	 &
+	 &
+	 & 
+	Calificación media de un producto.   \\ 
+	\hline
+\end{tabular}
+\caption{Tabla de diccionario de datos Producto.}
+\label{table:dic4-Producto}
+\end{table}
+\FloatBarrier
+

@@ -1,0 +1,38 @@
+	\begin{UseCase}{CUGH1}{Modificar periodo para generar horarios}{Modificar las fechas de inicio y fin del periodo que se le da al proceso de generacion de horarios, para que en este puedan realizarse las solicitudes de materias de los profesores, generacion, modificacion y publicacion de horarios, asignacion y modificacion de profesores a materias.}
+		\UCitem{Versión}{1.0}
+		\UCitem{Actor}{Subdirector}
+		\UCitem{Propósito}{Corregir el periodo para una reasignacion de fechas.}
+		\UCitem{Resumen}{El sistema muestra una pantalla donde el subdirector puede modificar la fecha de inicio y de final de periodo.}
+		\UCitem{Entradas}{Fecha inicio, fecha fin.}
+		\UCitem{Salidas}{}
+		\UCitem{Precondiciones}{Las fechas del periodo deben haberse establecido.}
+		\UCitem{Postcondiciones}{}
+		\UCitem{Autor}{Eduardo Espino Maldonado.}
+	\end{UseCase}
+  
+	\begin{UCtrayectoria}{Principal}
+		\UCpaso[\UCactor] Da click en la opcion "Periodo de Generacion de Horarios" vía la \IUref{UI}{Pantalla de Index}\label{CULogin}.
+		\UCpaso           Despliega la tabla de Periodod Escolar en la \IUref{IU}{Consultar Periodo}
+		\UCpaso[\UCactor] Da click en el boton \IUbutton{Modificar}.
+		\UCpaso           Despliega un Modal con un formulario lleno con los datos previamente introducidos.
+		\UCpaso[\UCactor] Da click en el boton \IUbutton{Calendario} en Fecha de Inicio de Periodo.
+		\UCpaso           Despliega un calendario marcando la fecha ingresada por omision.
+		\UCpaso[\UCactor] Da click en el dia que desea asignar como fecha de inicio.     
+		\UCpaso[\UCactor] Da click en el boton \IUbutton{Calendario} en Fecha de Fin de Periodo.
+		\UCpaso           Despliega un calendario marcando la fecha ingresada por omision.
+		\UCpaso[\UCactor] Da click en el dia que desea asignar como fecha de fin.     
+		\UCpaso[\UCactor] Da click en el boton \IUbutton {Definir}.
+		\UCpaso           Notifica via email a los Jefes de Departamento que el periodo de generacion de horarios se ha modificado (manda fechas de inicio y de fin).
+	\end{UCtrayectoria}
+    
+	\begin{UCtrayectoriaA}{A}{El Subdirector no asigno ninguna fecha al Periodo}
+		\UCpaso 	  Muestra el Mensaje {\bf MSG1-}``Periodo inválido La fecha de fin no puede ser menor a la fecha de inicio''.
+		\UCpaso[\UCactor] Oprime el botón \IUbutton{OK}.
+		\UCpaso[] Termina el caso de uso.
+	\end{UCtrayectoriaA}
+
+	\begin{UCtrayectoriaA}{B}{La feha de fin es menor a la fecha de inicio}
+		\UCpaso 	  Muestra el Mensaje {\bf MSG1-}``Periodo inválido La fecha de fin no puede ser menor a la fecha de inicio''.
+		\UCpaso[\UCactor] Oprime el botón \IUbutton{OK}.
+		\UCpaso[] Termina el caso de uso.
+	\end{UCtrayectoriaA}

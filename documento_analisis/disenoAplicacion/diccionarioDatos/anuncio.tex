@@ -1,0 +1,89 @@
+Las tablas presentadas a continuación muestran el diccionario de datos con la información de cada una de las entidades creadas en la base de datos, los campos que cada una de ellas contiene, su tipo y una pequeña descripción de lo que a cada campo se refiere con el fin de facilitar la comprensión de dicha base. \\
+
+\title{\textbf{
+Tabla de diccionario de datos Anuncio
+}} \\
+
+El cuadro \ref{table:dic-Anuncio} indica la descripción correspondiente de la entidad Anuncio.
+
+\label{Entidad-Anuncio}
+\FloatBarrier
+\begin{table}[htb]
+\setlength\extrarowheight{2pt}
+\begin{tabular}{|p{2.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{5.5cm}|}
+	\hline
+	\multicolumn{2}{|c|} 
+	{{
+		\cellcolor[HTML]{00009B}{\color[HTML]{FFFFFF} Nombre de la relación: }		
+	}} &
+	\multicolumn{4}{|c|} {{ Anuncio }} \\
+	\hline
+	\multicolumn{2}{|c|} 
+	{{
+		\cellcolor[HTML]{00009B}{\color[HTML]{FFFFFF} Objetivo: }		
+	}} &
+	\multicolumn{4}{|c|} {{ Tabla que almacenará la información sobre los anuncios. }} \\
+	\hline
+	\rowcolor[HTML]{3166FF} 
+	{\color[HTML]{FFFFFF} Campo }  & 
+	{\color[HTML]{FFFFFF} Tipo de dato } & 
+	{\color[HTML]{FFFFFF} Tamaño } & 
+	{\color[HTML]{FFFFFF} Constraint } & 
+	{\color[HTML]{FFFFFF} No nulo } & 
+	{\color[HTML]{FFFFFF} Descripción } \\ 
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} id\_anuncio } &
+	integer &
+	10 &
+	PK &
+	X  & 
+	Identificador del anuncio.   \\ 
+	\hline
+	
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} titulo } &
+	varchar &
+	50 &
+	&
+	X  & 
+	Titulo del anuncio.   \\ 
+	\hline
+
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} descripcion } &
+	text &
+	 &
+	&
+	  & 
+	Breve descripción sobre el anuncio.   \\ 
+	\hline
+	
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} fecha\_inicio } &
+	timestamp &
+	 &
+	&
+	X  & 
+	Fecha a partir de la cual el anuncio es válido.   \\ 
+	\hline
+	
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} fecha\_fin } &
+	timestamp &
+	 &
+	&
+	X  & 
+	Fecha a partir de la cual el anuncio deja de ser válido.   \\ 
+	\hline
+	
+	
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} ruta\_imagen } &
+	varchar &
+	250 &
+	&
+	  & 
+	Almacena la ruta donde está almacenada la imagen.   \\ 
+	\hline
+		
+\end{tabular}
+\caption{Tabla de diccionario de datos Anuncio. }
+\label{table:dic-Anuncio}
+\end{table}
+\FloatBarrier
+

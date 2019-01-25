@@ -1,0 +1,260 @@
+\select@language {spanish}
+\contentsline {chapter}{\numberline {1}Introducci\IeC {\'o}n}{15}{chapter.1}
+\contentsline {section}{\numberline {1.1}Contexto}{16}{section.1.1}
+\contentsline {section}{\numberline {1.2}Problem\IeC {\'a}tica}{16}{section.1.2}
+\contentsline {section}{\numberline {1.3}Estado del arte}{17}{section.1.3}
+\contentsline {subsection}{\numberline {1.3.1}Tienda departamental Macy's}{17}{subsection.1.3.1}
+\contentsline {subsection}{\numberline {1.3.2}Supermercado Carrefour}{18}{subsection.1.3.2}
+\contentsline {subsection}{\numberline {1.3.3}Tienda de ropa American Eagle Outfitters}{18}{subsection.1.3.3}
+\contentsline {subsection}{\numberline {1.3.4}Aplicaci\IeC {\'o}n makeitapp}{19}{subsection.1.3.4}
+\contentsline {subsection}{\numberline {1.3.5}TT 2015-A056 API para el desarrollo de sistemas de recomendaci\IeC {\'o}n.}{20}{subsection.1.3.5}
+\contentsline {subsection}{\numberline {1.3.6}TT 2010-0063 Trabajo Terminal Sistema generador de recomendaciones para una tienda en-l\IeC {\'\i }nea de videojuegos.}{20}{subsection.1.3.6}
+\contentsline {section}{\numberline {1.4}Soluci\IeC {\'o}n propuesta}{21}{section.1.4}
+\contentsline {section}{\numberline {1.5}Justificaci\IeC {\'o}n}{22}{section.1.5}
+\contentsline {section}{\numberline {1.6}Objetivos}{23}{section.1.6}
+\contentsline {subsection}{\numberline {1.6.1}Objetivo general}{23}{subsection.1.6.1}
+\contentsline {subsection}{\numberline {1.6.2}Objetivos espec\IeC {\'\i }ficos}{23}{subsection.1.6.2}
+\contentsline {section}{\numberline {1.7}Metodolog\IeC {\'\i }a}{24}{section.1.7}
+\contentsline {section}{\numberline {1.8}Beneficios esperados}{24}{section.1.8}
+\contentsline {section}{\numberline {1.9}Alcance}{24}{section.1.9}
+\contentsline {section}{\numberline {1.10}Limitantes}{25}{section.1.10}
+\contentsline {chapter}{\numberline {2}Marco te\IeC {\'o}rico}{26}{chapter.2}
+\contentsline {section}{\numberline {2.1}Aprendizaje m\IeC {\'a}quina}{26}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Antecedentes de la Inteligencia Artificial}{27}{subsection.2.1.1}
+\contentsline {subsubsection}{\numberline {2.1.1.1}Nacimiento [1952-1956]}{27}{subsubsection.2.1.1.1}
+\contentsline {subsubsection}{\numberline {2.1.1.2}Primer invierno de la Inteligencia Artificial [1974-1980] }{27}{subsubsection.2.1.1.2}
+\contentsline {subsubsection}{\numberline {2.1.1.3}La explosi\IeC {\'o}n de los 80's [1980-1987]}{28}{subsubsection.2.1.1.3}
+\contentsline {subsubsection}{\numberline {2.1.1.4}Segundo Invierno de la Inteligencia Artificial [1987-1993]}{28}{subsubsection.2.1.1.4}
+\contentsline {subsubsection}{\numberline {2.1.1.5}Explosi\IeC {\'o}n y adopci\IeC {\'o}n comercial [2006-Actual]}{28}{subsubsection.2.1.1.5}
+\contentsline {subsection}{\numberline {2.1.2}Tipos de aprendizaje}{29}{subsection.2.1.2}
+\contentsline {subsubsection}{\numberline {2.1.2.1}Aprendizaje supervisado}{29}{subsubsection.2.1.2.1}
+\contentsline {subsection}{\numberline {2.1.3}Aprendizaje no supervisado}{30}{subsection.2.1.3}
+\contentsline {subsubsection}{\numberline {2.1.3.1}Algoritmo de agrupamiento K-means}{30}{subsubsection.2.1.3.1}
+\contentsline {subsection}{\numberline {2.1.4}Algoritmos de Aprendizaje supervisado}{31}{subsection.2.1.4}
+\contentsline {subsubsection}{\numberline {2.1.4.1}Hiperplano}{31}{subsubsection.2.1.4.1}
+\contentsline {subsubsection}{\numberline {2.1.4.2}Separabilidad lineal}{32}{subsubsection.2.1.4.2}
+\contentsline {subsubsection}{\numberline {2.1.4.3}Red neuronal artificial}{32}{subsubsection.2.1.4.3}
+\contentsline {paragraph}{Elementos de una red neuronal}{32}{section*.17}
+\contentsline {paragraph}{Funci\IeC {\'o}n de activaci\IeC {\'o}n}{33}{section*.19}
+\contentsline {subsubsection}{\numberline {2.1.4.4}Perceptr\IeC {\'o}n}{33}{subsubsection.2.1.4.4}
+\contentsline {subsubsection}{\numberline {2.1.4.5}Sistemas de recomendaci\IeC {\'o}n}{34}{subsubsection.2.1.4.5}
+\contentsline {paragraph}{Enfoque basado en contenido}{35}{section*.23}
+\contentsline {paragraph}{Enfoque basado en filtrado colaborativo}{35}{section*.24}
+\contentsline {paragraph}{Filtrado colaborativo: Basado en memoria}{36}{section*.26}
+\contentsline {paragraph}{Filtrado colaborativo: Basado en modelos}{37}{section*.30}
+\contentsline {paragraph}{Pros y contras del filtrado colaborativo}{38}{section*.31}
+\contentsline {paragraph}{Filtrado h\IeC {\'\i }brido}{38}{section*.32}
+\contentsline {section}{\numberline {2.2}IoE (Internet of Everything)}{39}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Antecedentes}{39}{subsection.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.1.1} IoT (Internet of Things) }{39}{subsubsection.2.2.1.1}
+\contentsline {subsubsection}{\numberline {2.2.1.2} Sistemas embebidos }{39}{subsubsection.2.2.1.2}
+\contentsline {subsubsection}{\numberline {2.2.1.3} C\IeC {\'o}mputo ubicuo }{40}{subsubsection.2.2.1.3}
+\contentsline {subsection}{\numberline {2.2.2}Tendencias}{40}{subsection.2.2.2}
+\contentsline {subsubsection}{\numberline {2.2.2.1} IoE e inteligencia artificial }{40}{subsubsection.2.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.2.2} IoE y conectividad}{40}{subsubsection.2.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Ventajas}{41}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.4}Desventajas}{41}{subsection.2.2.4}
+\contentsline {subsection}{\numberline {2.2.5}Ejemplos}{41}{subsection.2.2.5}
+\contentsline {section}{\numberline {2.3}Mobile Computing}{42}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Dispositivos de computaci\IeC {\'o}n m\IeC {\'o}vil}{42}{subsection.2.3.1}
+\contentsline {subsubsection}{\numberline {2.3.1.1}Asistente digital personal (PDA) }{42}{subsubsection.2.3.1.1}
+\contentsline {subsubsection}{\numberline {2.3.1.2}Tableta}{42}{subsubsection.2.3.1.2}
+\contentsline {subsubsection}{\numberline {2.3.1.3}PC Ultra-M\IeC {\'o}vil}{43}{subsubsection.2.3.1.3}
+\contentsline {subsubsection}{\numberline {2.3.1.4}Computadoras corporales}{43}{subsubsection.2.3.1.4}
+\contentsline {subsubsection}{\numberline {2.3.1.5}Tel\IeC {\'e}fono inteligente}{44}{subsubsection.2.3.1.5}
+\contentsline {subsection}{\numberline {2.3.2}Antecedentes del tel\IeC {\'e}fono inteligente}{44}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.3}Sistemas operativos}{46}{subsection.2.3.3}
+\contentsline {subsubsection}{\numberline {2.3.3.1}Symbian}{46}{subsubsection.2.3.3.1}
+\contentsline {subsubsection}{\numberline {2.3.3.2}Windows}{46}{subsubsection.2.3.3.2}
+\contentsline {subsubsection}{\numberline {2.3.3.3}BlackBerry}{47}{subsubsection.2.3.3.3}
+\contentsline {subsubsection}{\numberline {2.3.3.4}iOS}{47}{subsubsection.2.3.3.4}
+\contentsline {subsubsection}{\numberline {2.3.3.5}Android}{47}{subsubsection.2.3.3.5}
+\contentsline {subsection}{\numberline {2.3.4}Limitaciones}{48}{subsection.2.3.4}
+\contentsline {section}{\numberline {2.4}Sistema de posicionamiento en interiores}{48}{section.2.4}
+\contentsline {section}{\numberline {2.5}Beacons Estimote}{49}{section.2.5}
+\contentsline {subsubsection}{\numberline {2.5.0.1}iBeacon y Eddystone}{49}{subsubsection.2.5.0.1}
+\contentsline {subsubsection}{\numberline {2.5.0.2}Estimote API}{50}{subsubsection.2.5.0.2}
+\contentsline {section}{\numberline {2.6}Marketing}{51}{section.2.6}
+\contentsline {subsection}{\numberline {2.6.1}Marketing de proximidad}{51}{subsection.2.6.1}
+\contentsline {subsection}{\numberline {2.6.2}Importancia del marketing de proximidad}{52}{subsection.2.6.2}
+\contentsline {subsection}{\numberline {2.6.3}Estrategias de marketing de proximidad}{52}{subsection.2.6.3}
+\contentsline {subsubsection}{\numberline {2.6.3.1}Conexi\IeC {\'o}n a una red WiFi}{52}{subsubsection.2.6.3.1}
+\contentsline {subsubsection}{\numberline {2.6.3.2}Cupones digitales en el lugar}{52}{subsubsection.2.6.3.2}
+\contentsline {subsubsection}{\numberline {2.6.3.3}Lectura de c\IeC {\'o}digo QR}{52}{subsubsection.2.6.3.3}
+\contentsline {subsubsection}{\numberline {2.6.3.4}NFC}{53}{subsubsection.2.6.3.4}
+\contentsline {subsubsection}{\numberline {2.6.3.5}Beacons}{53}{subsubsection.2.6.3.5}
+\contentsline {section}{\numberline {2.7}Servidor Web as\IeC {\'\i }ncrono }{53}{section.2.7}
+\contentsline {chapter}{\numberline {3}Bosquejo general de la soluci\IeC {\'o}n}{55}{chapter.3}
+\contentsline {section}{\numberline {3.1}An\IeC {\'a}lisis de factibilidad}{55}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Factibilidad t\IeC {\'e}cnica}{55}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Factibilidad econ\IeC {\'o}mica}{57}{subsection.3.1.2}
+\contentsline {section}{\numberline {3.2}Elecci\IeC {\'o}n de tecnolog\IeC {\'\i }as}{58}{section.3.2}
+\contentsline {section}{\numberline {3.3}An\IeC {\'a}lisis de riesgos}{62}{section.3.3}
+\contentsline {section}{\numberline {3.4}Arquitectura de la aplicaci\IeC {\'o}n}{68}{section.3.4}
+\contentsline {section}{\numberline {3.5}Diccionario de actores}{69}{section.3.5}
+\contentsline {section}{\numberline {3.6}Diagrama de casos de uso general}{69}{section.3.6}
+\contentsline {section}{\numberline {3.7}Requerimientos Funcionales (RF)}{71}{section.3.7}
+\contentsline {section}{\numberline {3.8}Requerimientos No Funcionales (RNF)}{78}{section.3.8}
+\contentsline {chapter}{\numberline {4}Modelo de datos}{79}{chapter.4}
+\contentsline {section}{\numberline {4.1}Modelo relacional}{79}{section.4.1}
+\contentsline {section}{\numberline {4.2}Prototipo 1: Dise\IeC {\~n}o inicial de la base de datos}{84}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Diccionario de datos}{84}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Modelo de la base de datos}{100}{subsection.4.2.2}
+\contentsline {section}{\numberline {4.3}Prototipo 1.1: Modificaciones al modelo de la base de datos}{104}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Modificaciones realizadas}{104}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Diccionario de datos}{104}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3}Modelo de la base de datos}{107}{subsection.4.3.3}
+\contentsline {section}{\numberline {4.4}Prototipo 1.2: Modificaciones al modelo de la base de datos}{111}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Modificaciones realizadas}{111}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}Diccionario de datos de entidades modificadas}{111}{subsection.4.4.2}
+\contentsline {subsection}{\numberline {4.4.3}Modelo de la base de datos}{111}{subsection.4.4.3}
+\contentsline {section}{\numberline {4.5}Prototipo 1.3: Modificaciones al modelo de la base de datos}{115}{section.4.5}
+\contentsline {subsection}{\numberline {4.5.1}Modificaciones realizadas}{115}{subsection.4.5.1}
+\contentsline {subsection}{\numberline {4.5.2}Diccionario de datos de entidades modificadas}{115}{subsection.4.5.2}
+\contentsline {subsection}{\numberline {4.5.3}Modelo de la base de datos}{115}{subsection.4.5.3}
+\contentsline {section}{\numberline {4.6}Prototipo 1.4: Modificaciones al modelo de la base de datos}{119}{section.4.6}
+\contentsline {subsection}{\numberline {4.6.1}Modificaciones realizadas}{119}{subsection.4.6.1}
+\contentsline {subsection}{\numberline {4.6.2}Diccionario de datos de entidades modificadas}{119}{subsection.4.6.2}
+\contentsline {subsection}{\numberline {4.6.3}Modelo de la base de datos}{123}{subsection.4.6.3}
+\contentsline {section}{\numberline {4.7}Prototipo 2: Generador de Registros Artificiales (GRA)}{127}{section.4.7}
+\contentsline {subsection}{\numberline {4.7.1}An\IeC {\'a}lisis}{127}{subsection.4.7.1}
+\contentsline {subsection}{\numberline {4.7.2}Dise\IeC {\~n}o}{129}{subsection.4.7.2}
+\contentsline {section}{\numberline {4.8}Prototipo 2.1: Generador de Registros Artificiales (GRA)}{141}{section.4.8}
+\contentsline {subsection}{\numberline {4.8.1}Modificaciones realizadas}{141}{subsection.4.8.1}
+\contentsline {subsection}{\numberline {4.8.2}An\IeC {\'a}lisis}{141}{subsection.4.8.2}
+\contentsline {subsection}{\numberline {4.8.3}Dise\IeC {\~n}o}{144}{subsection.4.8.3}
+\contentsline {chapter}{\numberline {5}Aplicaciones m\IeC {\'o}viles}{148}{chapter.5}
+\contentsline {section}{\numberline {5.1}Aplicaci\IeC {\'o}n Interactiva Difusora de Productos (AIDP)}{148}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Prototipo 1: Dise\IeC {\~n}o inicial de la aplicaci\IeC {\'o}n}{149}{subsection.5.1.1}
+\contentsline {subsubsection}{\numberline {5.1.1.1}An\IeC {\'a}lisis}{149}{subsubsection.5.1.1.1}
+\contentsline {subsubsection}{\numberline {5.1.1.2}Dise\IeC {\~n}o}{151}{subsubsection.5.1.1.2}
+\contentsline {subparagraph}{UIAIDP1 - Pantalla de inicio}{162}{section*.136}
+\contentsline {subparagraph}{UIAIDP2 - Log in de la aplicaci\IeC {\'o}n}{163}{section*.138}
+\contentsline {subparagraph}{UIAIDP2.1 - Log in mediante una cuenta previa}{164}{section*.140}
+\contentsline {subparagraph}{UIAIDP2.2 - Log in mediante una cuenta nueva}{165}{section*.142}
+\contentsline {subparagraph}{UIAIDP2.3 - Log in mediante la creaci\IeC {\'o}n de una cuenta nueva en Facebook}{166}{section*.144}
+\contentsline {subparagraph}{UIAIDP2.4 - Log in solicitado por la API de Facebook}{167}{section*.146}
+\contentsline {subparagraph}{UIAIDP3 - Visualizar folletos}{168}{section*.148}
+\contentsline {subparagraph}{UIAIDP3.1 - Detectar Beacons}{169}{section*.150}
+\contentsline {subparagraph}{UIAIDP4 - Visualizar men\IeC {\'u} de opciones}{170}{section*.152}
+\contentsline {subparagraph}{UIAIDP5 - Logros}{171}{section*.154}
+\contentsline {subparagraph}{UIAIDP6 - Promociones}{172}{section*.156}
+\contentsline {subparagraph}{UIAIDP7 - Favoritos}{173}{section*.158}
+\contentsline {subparagraph}{UIAIDP8 - Recomendaciones}{174}{section*.160}
+\contentsline {subparagraph}{UIAIDP9 - B\IeC {\'u}squeda de productos}{175}{section*.162}
+\contentsline {subparagraph}{UIAIDP10 - Ver perfil}{176}{section*.164}
+\contentsline {subparagraph}{UIAIDP10.1 - Seleccionar sexo}{177}{section*.166}
+\contentsline {subparagraph}{UIAIDP10.2 - Seleccionar estado civil}{178}{section*.168}
+\contentsline {subparagraph}{UIAIDP10.3 - Seleccionar fecha de nacimiento}{179}{section*.170}
+\contentsline {subparagraph}{UIAIDP11 - Gustos}{180}{section*.172}
+\contentsline {subparagraph}{UIAIDP12 - Beneficios}{181}{section*.174}
+\contentsline {subparagraph}{UIAIDP13 - Permisos}{182}{section*.176}
+\contentsline {subparagraph}{UIAIDP14 - Cerrar sesi\IeC {\'o}n}{183}{section*.178}
+\contentsline {subsection}{\numberline {5.1.2}Prototipo 2: Conexi\IeC {\'o}n de la AIDP con Beacon}{184}{subsection.5.1.2}
+\contentsline {subsubsection}{\numberline {5.1.2.1}An\IeC {\'a}lisis}{184}{subsubsection.5.1.2.1}
+\contentsline {subsubsection}{\numberline {5.1.2.2}Dise\IeC {\~n}o}{184}{subsubsection.5.1.2.2}
+\contentsline {subsection}{\numberline {5.1.3}Prototipo 3: Integraci\IeC {\'o}n de m\IeC {\'o}dulos del sistema}{188}{subsection.5.1.3}
+\contentsline {subsubsection}{\numberline {5.1.3.1}An\IeC {\'a}lisis}{188}{subsubsection.5.1.3.1}
+\contentsline {subsubsection}{\numberline {5.1.3.2}Dise\IeC {\~n}o}{199}{subsubsection.5.1.3.2}
+\contentsline {subparagraph}{UIAIDP15 - Registrar cuenta nueva}{200}{section*.197}
+\contentsline {subparagraph}{UIAIDP16 - Recuperar contrase\IeC {\~n}a}{201}{section*.199}
+\contentsline {subparagraph}{UIAIDP17 - Muestra informaci\IeC {\'o}n de productos}{202}{section*.201}
+\contentsline {subparagraph}{UIAIDP18 - Eliminar producto de favoritos}{203}{section*.203}
+\contentsline {subsection}{\numberline {5.1.4}Prototipo 4: Integraci\IeC {\'o}n de m\IeC {\'o}dulos restantes del sistema}{245}{subsection.5.1.4}
+\contentsline {subsubsection}{\numberline {5.1.4.1}An\IeC {\'a}lisis}{245}{subsubsection.5.1.4.1}
+\contentsline {subsubsection}{\numberline {5.1.4.2}Dise\IeC {\~n}o}{247}{subsubsection.5.1.4.2}
+\contentsline {subparagraph}{UIAIDP19 - Solicitar apoyo a vendedor}{253}{section*.254}
+\contentsline {section}{\numberline {5.2}Aplicaci\IeC {\'o}n Interactiva para el Personal de Ventas (AIPV)}{258}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Prototipo 1: Dise\IeC {\~n}o inicial de la aplicaci\IeC {\'o}n y descubrimiento de Beacons}{258}{subsection.5.2.1}
+\contentsline {subsubsection}{\numberline {5.2.1.1}An\IeC {\'a}lisis}{258}{subsubsection.5.2.1.1}
+\contentsline {paragraph}{Casos de uso de la AIPV.}{258}{section*.261}
+\contentsline {paragraph}{Diagrama de clases.}{260}{section*.263}
+\contentsline {subsubsection}{\numberline {5.2.1.2}Dise\IeC {\~n}o}{263}{subsubsection.5.2.1.2}
+\contentsline {paragraph}{Flujo de navegaci\IeC {\'o}n de la AIPV.}{267}{section*.273}
+\contentsline {paragraph}{Interfaces de usuario}{267}{section*.275}
+\contentsline {subparagraph}{UIAPV1 - Login}{267}{section*.276}
+\contentsline {subparagraph}{UIAPV2 - Introducci\IeC {\'o}n a la applicaci\IeC {\'o}n}{269}{section*.278}
+\contentsline {subparagraph}{UIAPV3 - Home: Clientes cercanos}{269}{section*.280}
+\contentsline {subparagraph}{UIAPV4 - Editar perfil}{270}{section*.282}
+\contentsline {subparagraph}{UIAPV5 - Detalles del cliente}{271}{section*.284}
+\contentsline {subparagraph}{UIAPV6 - Enviar recomendaciones al cliente}{272}{section*.286}
+\contentsline {subparagraph}{UIAPV7 - Estad\IeC {\'\i }sticas del cliente}{273}{section*.288}
+\contentsline {subsection}{\numberline {5.2.2}Prototipo 2: Integraci\IeC {\'o}n con Apache Kafka}{274}{subsection.5.2.2}
+\contentsline {subsubsection}{\numberline {5.2.2.1}An\IeC {\'a}lisis}{274}{subsubsection.5.2.2.1}
+\contentsline {paragraph}{Casos de uso de la AIPV.}{274}{section*.290}
+\contentsline {paragraph}{Diagrama de clases.}{275}{section*.291}
+\contentsline {subsubsection}{\numberline {5.2.2.2}Dise\IeC {\~n}o}{281}{subsubsection.5.2.2.2}
+\contentsline {paragraph}{Diagramas de secuencia.}{281}{section*.296}
+\contentsline {subsection}{\numberline {5.2.3}Prototipo 3: Integraci\IeC {\'o}n con servidor (Detalles y estad\IeC {\'\i }sticas de clientes y env\IeC {\'\i }o de recomendaciones)}{286}{subsection.5.2.3}
+\contentsline {subsubsection}{\numberline {5.2.3.1}An\IeC {\'a}lisis}{287}{subsubsection.5.2.3.1}
+\contentsline {paragraph}{Casos de uso de la AIPV.}{287}{section*.303}
+\contentsline {paragraph}{Diagrama de clases.}{287}{section*.304}
+\contentsline {subsubsection}{\numberline {5.2.3.2}Dise\IeC {\~n}o}{291}{subsubsection.5.2.3.2}
+\contentsline {paragraph}{Diagramas de secuencia.}{291}{section*.309}
+\contentsline {subsection}{\numberline {5.2.4}Prototipo 4: Prototipo final }{300}{subsection.5.2.4}
+\contentsline {subsubsection}{\numberline {5.2.4.1}An\IeC {\'a}lisis}{300}{subsubsection.5.2.4.1}
+\contentsline {paragraph}{Casos de uso de la AIPV.}{300}{section*.319}
+\contentsline {subsubsection}{\numberline {5.2.4.2}Dise\IeC {\~n}o}{302}{subsubsection.5.2.4.2}
+\contentsline {paragraph}{Diagramas de secuencia.}{302}{section*.321}
+\contentsline {paragraph}{Flujo de navegaci\IeC {\'o}n final de la AIPV.}{306}{section*.326}
+\contentsline {paragraph}{Interfaces de usuario}{306}{section*.328}
+\contentsline {subparagraph}{UIAPV1 - Login}{306}{section*.329}
+\contentsline {subparagraph}{UIAPV2 - Introducci\IeC {\'o}n a la aplicaci\IeC {\'o}n}{307}{section*.331}
+\contentsline {subparagraph}{UIAPV3 - Home: Clientes cercanos}{310}{section*.337}
+\contentsline {subparagraph}{UIAPV3-1 - Home: Clientes cercanos (con datos)}{311}{section*.339}
+\contentsline {subparagraph}{UIAPV4 - Editar perfil}{312}{section*.342}
+\contentsline {subparagraph}{UIAPV5 - Detalles del cliente}{313}{section*.345}
+\contentsline {subparagraph}{UIAPV5 - Detalles del cliente (Beneficios y recomendaciones)}{314}{section*.347}
+\contentsline {subparagraph}{UIAPV5 - Detalles del cliente (Productos favoritos)}{315}{section*.349}
+\contentsline {subparagraph}{UIAPV6 - Confirmaci\IeC {\'o}n de env\IeC {\'\i }o de recomendaci\IeC {\'o}n al cliente}{317}{section*.353}
+\contentsline {subparagraph}{UIAPV7 - Estad\IeC {\'\i }sticas del cliente}{318}{section*.357}
+\contentsline {subparagraph}{UIAPV7 - Estad\IeC {\'\i }sticas del cliente (Categor\IeC {\'\i }as m\IeC {\'a}s compradas)}{319}{section*.359}
+\contentsline {chapter}{\numberline {6}Servidores}{321}{chapter.6}
+\contentsline {section}{\numberline {6.1}Node.JS con Express}{321}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Panel de Administraci\IeC {\'o}n (PA)}{322}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}Prototipo 1: Dise\IeC {\~n}o inicial del Panel de Administraci\IeC {\'o}n}{322}{subsection.6.1.2}
+\contentsline {subsubsection}{\numberline {6.1.2.1}An\IeC {\'a}lisis}{322}{subsubsection.6.1.2.1}
+\contentsline {subsubsection}{\numberline {6.1.2.2}Dise\IeC {\~n}o}{322}{subsubsection.6.1.2.2}
+\contentsline {subsection}{\numberline {6.1.3}Prototipo 2: Monitor geogr\IeC {\'a}fico de beacons}{324}{subsection.6.1.3}
+\contentsline {subsubsection}{\numberline {6.1.3.1}An\IeC {\'a}lisis}{324}{subsubsection.6.1.3.1}
+\contentsline {subsubsection}{\numberline {6.1.3.2}Dise\IeC {\~n}o}{326}{subsubsection.6.1.3.2}
+\contentsline {subsection}{\numberline {6.1.4}Prototipo 3: Integraci\IeC {\'o}n con servicios REST a panel de administraci\IeC {\'o}n}{331}{subsection.6.1.4}
+\contentsline {subsubsection}{\numberline {6.1.4.1}An\IeC {\'a}lisis}{331}{subsubsection.6.1.4.1}
+\contentsline {subsubsection}{\numberline {6.1.4.2}Dise\IeC {\~n}o}{333}{subsubsection.6.1.4.2}
+\contentsline {paragraph}{Flujo de navegaci\IeC {\'o}n del Panel de Administraci\IeC {\'o}n.}{343}{section*.393}
+\contentsline {subsection}{\numberline {6.1.5}Prototipo 4: Integraci\IeC {\'o}n de pantalla para ejecutar algoritmo k-means}{346}{subsection.6.1.5}
+\contentsline {subsubsection}{\numberline {6.1.5.1}An\IeC {\'a}lisis}{346}{subsubsection.6.1.5.1}
+\contentsline {subsubsection}{\numberline {6.1.5.2}Dise\IeC {\~n}o}{348}{subsubsection.6.1.5.2}
+\contentsline {paragraph}{Flujo de navegaci\IeC {\'o}n del Panel de Administraci\IeC {\'o}n.}{353}{section*.403}
+\contentsline {subsubsection}{\numberline {6.1.5.3}Pruebas}{355}{subsubsection.6.1.5.3}
+\contentsline {subsubsection}{\numberline {6.1.5.4}Conclusiones}{359}{subsubsection.6.1.5.4}
+\contentsline {section}{\numberline {6.2}Tornado}{359}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Sistema de gesti\IeC {\'o}n, procesamiento y proveedor de datos de Retail}{359}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}Prototipo 1: Desarrollo de servicios REST}{359}{subsection.6.2.2}
+\contentsline {subsubsection}{\numberline {6.2.2.1}An\IeC {\'a}lisis}{359}{subsubsection.6.2.2.1}
+\contentsline {subsubsection}{\numberline {6.2.2.2}Dise\IeC {\~n}o}{361}{subsubsection.6.2.2.2}
+\contentsline {subsection}{\numberline {6.2.3}Prototipo 2: Integraci\IeC {\'o}n de algoritmo de agrupamiento K-medias}{385}{subsection.6.2.3}
+\contentsline {subsubsection}{\numberline {6.2.3.1}An\IeC {\'a}lisis}{385}{subsubsection.6.2.3.1}
+\contentsline {subsubsection}{\numberline {6.2.3.2}Dise\IeC {\~n}o}{386}{subsubsection.6.2.3.2}
+\contentsline {subsection}{\numberline {6.2.4}Prototipo 3: Integraci\IeC {\'o}n de sistema de recomendaci\IeC {\'o}n basado en filtrado colaborativo primera versi\IeC {\'o}n}{387}{subsection.6.2.4}
+\contentsline {subsubsection}{\numberline {6.2.4.1}An\IeC {\'a}lisis}{388}{subsubsection.6.2.4.1}
+\contentsline {subsubsection}{\numberline {6.2.4.2}Dise\IeC {\~n}o}{391}{subsubsection.6.2.4.2}
+\contentsline {subsubsection}{\numberline {6.2.4.3}Pruebas}{392}{subsubsection.6.2.4.3}
+\contentsline {subsection}{\numberline {6.2.5}Prototipo 4: Integraci\IeC {\'o}n de sistema de recomendaci\IeC {\'o}n basado en filtrado colaborativo segunda versi\IeC {\'o}n}{398}{subsection.6.2.5}
+\contentsline {subsubsection}{\numberline {6.2.5.1}An\IeC {\'a}lisis}{399}{subsubsection.6.2.5.1}
+\contentsline {subsubsection}{\numberline {6.2.5.2}Dise\IeC {\~n}o}{400}{subsubsection.6.2.5.2}
+\contentsline {subsection}{\numberline {6.2.6}Pruebas}{402}{subsection.6.2.6}
+\contentsline {subsubsection}{\numberline {6.2.6.1}Conclusiones}{412}{subsubsection.6.2.6.1}
+\contentsline {chapter}{\numberline {7}Conclusiones}{413}{chapter.7}
+\contentsline {chapter}{\numberline {8}Trabajo a futuro}{414}{chapter.8}
+\contentsline {section}{\numberline {8.1}Aplicaci\IeC {\'o}n Interactiva Difusora de Productos}{414}{section.8.1}
+\contentsline {section}{\numberline {8.2}Aplicaci\IeC {\'o}n Interactiva para el Personal de Ventas}{414}{section.8.2}
+\contentsline {section}{\numberline {8.3}Panel de Administraci\IeC {\'o}n}{414}{section.8.3}
+\contentsline {section}{\numberline {8.4}Sistema de Recomendaciones}{414}{section.8.4}
+\contentsline {chapter}{\numberline {9}Glosario de t\IeC {\'e}rminos}{415}{chapter.9}
+\contentsline {subsection}{\numberline {9.0.1}Beacons}{415}{subsection.9.0.1}
+\contentsline {subsubsection}{\numberline {9.0.1.1}Firmware}{415}{subsubsection.9.0.1.1}
+\contentsline {subsubsection}{\numberline {9.0.1.2}Ventajas}{416}{subsubsection.9.0.1.2}
+\contentsline {subsection}{\numberline {9.0.2}Bluetooth Low Energy (BLE)}{417}{subsection.9.0.2}
+\contentsline {chapter}{\numberline {10}Acr\IeC {\'o}nimos}{418}{chapter.10}
+\contentsline {chapter}{\numberline {11}Anexos}{428}{chapter.11}

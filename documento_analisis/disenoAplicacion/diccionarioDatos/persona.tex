@@ -1,0 +1,125 @@
+\title{\textbf{
+Tabla de diccionario de datos Persona
+}}\\
+
+El cuadro \ref{table:dic-Persona} indica la descripción correspondiente de la entidad Persona.
+\label{Entidad-Persona}
+\FloatBarrier
+\begin{table}[htb]
+\setlength\extrarowheight{2pt}
+\begin{tabular}{|p{2.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{5.5cm}|}
+	\hline
+	\multicolumn{2}{|c|} 
+	{{
+		\cellcolor[HTML]{00009B}{\color[HTML]{FFFFFF} Nombre de la relación: }		
+	}} &
+	\multicolumn{4}{|c|} {{ Persona }} \\
+	\hline
+	\multicolumn{2}{|c|} 
+	{{
+		\cellcolor[HTML]{00009B}{\color[HTML]{FFFFFF} Objetivo: }		
+	}} &
+	\multicolumn{4}{|c|} {{ Tabla que almacenará los datos generales de una persona. }} \\
+	\hline
+	\rowcolor[HTML]{3166FF} 
+	{\color[HTML]{FFFFFF} Campo }  & 
+	{\color[HTML]{FFFFFF} Tipo de dato } & 
+	{\color[HTML]{FFFFFF} Tamaño } & 
+	{\color[HTML]{FFFFFF} Constraint } & 
+	{\color[HTML]{FFFFFF} No nulo } & 
+	{\color[HTML]{FFFFFF} Descripción } \\ 
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} id\_persona } &
+	bigint &
+	20 &
+	PK &
+	X  & 
+	Identificador de la persona.   \\ 
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} nombre } &
+	varchar &
+	100 &
+	 &
+	X  & 
+	Nombre(s) de la persona.   \\ 
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} apellido\_paterno } &
+	varchar &
+	50 &
+	 &
+	X  & 
+	Apellido paterno de la persona.   \\ 
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} apellido\_materno } &
+	varchar &
+	50 &
+	 &
+	X  & 
+	Apellido materno de la persona. \\ 
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} email } &
+	varchar &
+	80 &
+	 &
+	X  & 
+	Email de la persona, se conforma de la siguiente expresión regular: 
+	\verb/^[_a-z0-9-]+(.[_a-z0$/  
+	\verb/-9-]+)*@[a-z0-9-]+$/   
+	\verb/[a-z0-9-] +)*(.[a-z]{2,4})$/ . \\ 
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} contrasena } &
+	varchar &
+	50 &
+	 &
+	X  & 
+	Contraseña de la persona.   \\ 
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} estado\_civil } &
+	char &
+	1 &
+	 &
+	  & 
+	Estado civil actual de la persona.   \\ 
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} fecha\_nacimiento } &
+	datetime &
+	 &
+	 &
+	 & 
+	Fecha de nacimiento de la persona.   \\ 
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} fk\_id\_direccion } &
+	integer &
+	10 &
+	FK &
+	X & 
+	Identificador de la dirección de la persona.   \\ 
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} telefono } &
+	varchar &
+	20 &
+	 &
+	 & 
+	Teléfono de contacto principal de la persona.   \\ 
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} sexo } &
+	tinyint &
+	1 &
+	 &
+	X & 
+	Sexo masculino(0) o femenino(1) de la persona.   \\ 
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} imagen } &
+	varchar &
+	250 &
+	 &
+	 & 
+	Url que apunta a la dirección donde se encuentra almacenada una foto de la persona.   \\ 
+	\hline
+	
+\end{tabular}
+\caption{Tabla de diccionario de datos Persona. }
+\label{table:dic-Persona}
+\end{table}
+\FloatBarrier
+

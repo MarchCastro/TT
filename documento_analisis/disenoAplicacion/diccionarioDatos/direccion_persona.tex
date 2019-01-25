@@ -1,0 +1,83 @@
+\title{\textbf{
+Tabla de diccionario de datos Dirección\_persona
+}} \\
+
+El cuadro \ref{table:dic-DirPersona} indica la descripción correspondiente de la entidad Dirección\_persona.
+\label{Entidad-Direccion_persona}
+\FloatBarrier
+\begin{table}[htb]
+\setlength\extrarowheight{2pt}
+\begin{tabular}{|p{2.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{5.5cm}|}
+	\hline
+	\multicolumn{2}{|c|} 
+	{{
+		\cellcolor[HTML]{00009B}{\color[HTML]{FFFFFF} Nombre de la relación: }		
+	}} &
+	\multicolumn{4}{|c|} {{ Dirección\_persona }} \\
+	\hline
+	\multicolumn{2}{|c|} 
+	{{
+		\cellcolor[HTML]{00009B}{\color[HTML]{FFFFFF} Objetivo: }		
+	}} &
+	\multicolumn{4}{|c|} {{ Tabla que almacenará la dirección de una persona. }} \\
+	\hline
+	\rowcolor[HTML]{3166FF} 
+	{\color[HTML]{FFFFFF} Campo }  & 
+	{\color[HTML]{FFFFFF} Tipo de dato } & 
+	{\color[HTML]{FFFFFF} Tamaño } & 
+	{\color[HTML]{FFFFFF} Constraint } & 
+	{\color[HTML]{FFFFFF} No nulo } & 
+	{\color[HTML]{FFFFFF} Descripción } \\ 
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} id\_direccion } &
+	bigint &
+	20 &
+	PK &
+	X  & 
+	Identificador de la dirección del cliente.   \\ 
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} calle } &
+	varchar &
+	90 &
+	 &
+	X  & 
+	Nombre de la calle en la que vive el cliente.   \\ 
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} colonia } &
+	varchar &
+	90 &
+	 &
+	X  & 
+	Nombre de la colonia en la que vive el cliente.   \\ 
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} delegacion } &
+	varchar &
+	90 &
+	 &
+	  & 
+	Nombre de la delegación en la que vive el cliente.   \\ 
+	\hline
+	
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} ciudad } &
+	varchar &
+	70 &
+	 &
+	X  & 
+	Nombre de la ciudad en la que vive el cliente. \\ 
+	\hline
+	
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} estado } &
+	varchar &
+	70 &
+	 &
+	X  & 
+	Nombre del estado en la que vive el cliente. \\ 
+	\hline
+	
+\end{tabular}
+
+\caption{Tabla de diccionario de datos Dirección\_persona. }
+\label{table:dic-DirPersona}
+\end{table}
+\FloatBarrier
+

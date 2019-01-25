@@ -1,0 +1,66 @@
+\title{\textbf{
+Tabla de diccionario de datos Departamento\_beacon
+}} \\
+
+El cuadro \ref{table:dic-DeptoBeacon} indica los cambios hechos en la descripción correspondiente de la entidad Departamento\_beacon.
+\label{Entidad-Departamento_beacon}
+\FloatBarrier
+\begin{table}[htb]
+\setlength\extrarowheight{2pt}
+\begin{tabular}{|p{2.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{5.5cm}|}
+	\hline
+	\multicolumn{2}{|c|} 
+	{{
+		\cellcolor[HTML]{00009B}{\color[HTML]{FFFFFF} Nombre de la relación: }		
+	}} &
+	\multicolumn{4}{|c|} {{ Departamento\_beacon }} \\
+	\hline
+	\multicolumn{2}{|c|} 
+	{{
+		\cellcolor[HTML]{00009B}{\color[HTML]{FFFFFF} Objetivo: }		
+	}} &
+	\multicolumn{4}{|c|} {{ Tabla que almacenará los beacons asociados a un departamento. }} \\
+	\hline
+	\rowcolor[HTML]{3166FF} 
+	{\color[HTML]{FFFFFF} Campo }  & 
+	{\color[HTML]{FFFFFF} Tipo de dato } & 
+	{\color[HTML]{FFFFFF} Tamaño } & 
+	{\color[HTML]{FFFFFF} Constraint } & 
+	{\color[HTML]{FFFFFF} No nulo } & 
+	{\color[HTML]{FFFFFF} Descripción } \\ 
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} fk\_id\_departamento } &
+	bigint &
+	20 &
+	PK &
+	X  & 
+	Identificador del departamento.   \\ 
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} id\_beacon } &
+	varchar &
+	50 &
+	&
+	X  & 
+	Identificador único del Beacon.   \\ 
+	\hline		
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} posicion\_geografica } &
+	point &
+	 &
+	&
+	X  & 
+	Coordenada geográfica en la que se encuentra el Beacon físicamente.   \\ 
+	\hline		
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} fecha\_sincronizacion } &
+	timestamp &
+	 &
+	&
+	X  & 
+	Última fecha en la que se hizo la sincronización de los datos del Beacon.
+\end{tabular}
+
+\caption{Tabla de diccionario de datos Departamento\_beacon. }
+\label{table:dic-DeptoBeacon}
+\end{table}
+\FloatBarrier
+
+

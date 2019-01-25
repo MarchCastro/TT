@@ -1,0 +1,107 @@
+% Copie este bloque por cada caso de uso:
+%-------------------- COMIENZA descripción del caso de uso.
+
+\begin{UseCase}{CUGH7}{Asignar profesor a materia}{
+	Cuando el algoritmo de generación de horarios de como resultados los grupos que se abrirán el próximo semestre, con sus respectivas materias, el jefe de departamento podrá asignar a un profesor a cada una de estas materias.
+	}
+	\UCitem{Versión}{1.0 - 12/11/16}
+	\UCitem{Autor}{Adrián Eduardo Galindo García}
+	\UCitem{Prioridad}{Alta}
+	\UCitem{Módulo}{Generación de horarios}
+	\UCitem{Actor}{Jefe de departamento}
+	\UCitem{Propósito}{Que el jefe de departamento pueda asignar a los profesores a las materias que se darán el próximo semestre.}
+	\UCitem{Entradas}{
+		\begin{itemize}
+			\item Semestre: Número entero positivo del 1 al 8.
+      		\item Materia: Identificador de la materia .
+     		\item Grupo: Identificador del grupo en el que se impartirá la materia.
+      		\item Profesor: Identificador del profesor que se esta asignando a la materia en el grupo.
+    	\end{itemize}
+	}
+	\UCitem{Origen}{
+		\begin{itemize}
+			\item Semestre: Desde una lista ( select ) que muestre los semestres del 1 al 8
+      		\item Materia: De una lista ( select ) que muestre las materias del semestre seleccionado.
+     		\item Grupo: De una lista ( select ) que muestre el nombre de los grupos que se abriran para la materia seleccionada.
+      		\item Profesor: De un botón que muestre el nombre completo del profesor.
+    	\end{itemize}
+	}
+	\UCitem{Salidas}{
+			Horario de clase con profesor asignado.
+	}
+	\UCitem{Destino}{
+			Pantalla
+	}
+	\UCitem{Precondiciones}{
+		\begin{itemize}
+			\item Que la fecha actual sea mayor a la fecha de ejecución del algoritmo y menor a la fecha de modificación por parte de gestión escolar, es decir que la fecha actual se encuentre dentro del periodo de asignación de profesores.
+			\item Que el horario de clase asignado a la materia para el grupo seleccionado este dentro del horario de trabajo del profesor.
+			\item Que la materia para el grupo seleccionado no tenga un profesor previamente asignado.
+			\item Que el profesor no haya excedido el máximo de grupos que puede impartir.  
+
+    		\end{itemize}
+	}
+	\UCitem{Postcondiciones}{
+		\begin{itemize}
+			\item Se asigna al profesor a la materia en el horario de clase del grupo seleccionado.
+			\item El profesor aparece como asignado para la materia.
+    	\end{itemize}
+	}
+	\UCitem{Reglas del negocio}{
+		\BRref{BR130}{P}
+	}	
+	\UCitem{Mensajes}{
+		\begin{itemize}
+			\item Se asigna al profesor a la materia en el horario de clase del grupo seleccionado.
+			\item El profesor aparece como asignado para la materia.
+    	\end{itemize}
+	}
+\end{UseCase}
+
+
+% ------------ Trayectoria principal, poner referencias a pantallas del sistema, reglas entre otras cosas que sean necesarias. ------------
+\begin{UCtrayectoria}{Principal}
+	\UCpaso[\UCactor] solicita asignar profesores a materias por medio de la opción del  \IUref{UI23}{Menú lateral} " Asignar profesores a materias"
+	\UCpaso Verifica que el algoritmo se haya ejecutado \Trayref{A}. 
+	\UCpaso Despliega la \IUref{UI32}{Pantalla Asignar profesor a materia por grupo} con la lista de semestres, materias y grupos que se abriran el proximo semestre.
+	\UCpaso[\UCactor] Selecciona el semestre correspondiente a la materia que desea asignarle profesor.
+	\UCpaso Muestra en el listado de materias únicamente las correspondientes al semestre seleccionado.
+	\UCpaso[\UCactor] Selecciona la materia a la que desea asignar un profesor.
+	\UCpaso Muestra en el listado de grupos únicamente los correspondientes a la materia seleccionada.
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{Consultar}.
+	\UCpaso Obtiene el horario de clase de la materia para el grupo seleccionado.
+	\UCpaso Obtiene una lista de profesores que solicitaron impartir la materia seleccionada y que el horario de clase de la misma se encuentra dentro de su horario de trabajo y los ordena de mayor a menor antigüedad. \Trayref{B} \label{CUGH7SegundaLista}.  
+	\UCpaso Obtiene una lista de profesores del departamento al que pertenece la materia de los cuales dentro de su horario de trabajo se encuentra el horario de clase de la materia y los ordena de mayor a menor antigüedad. \Trayref{C}. 
+	 \UCpaso Verifica que la materia en el grupo seleccionado no tenga asignado un profesor.  \Trayref{D}\label{CUGH7Desplegar} .  
+	\UCpaso Despliega el horario de clase de la materia para el grupo seleccionado, la lista de profesores que solicitaron impartirla y la lista de profesores del departamento en la  \IUref{UI33}{Pantalla Asignar profesor a materia por grupo}.
+	\UCpaso[\UCactor] Posiciona el cursor em el botón \IUbutton{[Nombre del profesor]} con el nombre del profesor que quiere asignar a la materia.
+	\UCpaso Muestra el Mensaje {\bf MSG2-}``El profesor debe impartir X materias, tiene Y materias asignadas de un máximo de Z.''.
+	\UCpaso[\UCactor] Oprime el botón \IUbutton{[Nombre del profesor]} con el nombre del profesor que quiere asignar a la materia.
+	\UCpaso Solicita al jefe de departamento que confirme la asignación del profesor a la materia para el grupo previamente seleccionado.
+	\UCpaso[\UCactor] Confirma la asignación del profesor a la materia presionando el botón \IUbutton{Asignar profesor}.
+	\UCpaso Asigna el profesor a la materia del grupo seleccionado.	
+\end{UCtrayectoria}
+
+% ---------------- Trayectorias alternativas -------------- Colocar los mensajes  {\bf MSG1-}
+
+\begin{UCtrayectoriaA}{A}{El algoritmo no se ha ejecutado}
+	\UCpaso Muestra la \IUref{UI33}{Pantalla Asignar profesores no disponible}.
+	\UCpaso[] Termina el caso de uso.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{B}{Ningún profesor que solicito dar la materia coincide con el horario de clase}
+	\UCpaso Muestra el Mensaje {\bf MSG2-}``Ningun profesor que haya solicitado impartir la materia coincide con el horario de clase.''.
+	\UCpaso Continúa en el paso \ref{CUGH7SegundaLista} del \UCref{CUGH7}.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{C}{Ningun profesor del departamento coincide con el horario de clase }
+	\UCpaso Muestra el Mensaje {\bf MSG3-}``Ningun profesor del departamento coincide con el horario de clase. Se mostraran profesores que coinciden con el horario de clase''.
+	\UCpaso Obtiene una lista de profesores de los cuales dentro de su horario de trabajo se encuentra el horario de clase de la materia y los ordena de mayor a menor antigüedad. \Trayref{C}. 
+	\UCpaso Continúa en el paso \ref{CUGH7Desplegar} del \UCref{CUGH7}.
+\end{UCtrayectoriaA}
+
+\begin{UCtrayectoriaA}{D}{Ya se ha asignado a un profesor para la materia en el grupo seleccionado}
+	\UCpaso Obtiene al profesor asignado a la materia en el grupo seleccionado.
+	\UCpaso Continua en el paso \ref{CUGH8Editar} del \UCref{CUGH8}.
+\end{UCtrayectoriaA}		
+%-------------------------------------- TERMINA descripción del caso de uso.

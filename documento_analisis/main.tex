@@ -1,0 +1,173 @@
+\documentclass[oneside,10pt]{book}
+
+\usepackage{cdtBook}
+\usepackage{usecases}
+\usepackage{gensymb}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage[utf8]{inputenc}
+\usepackage{placeins}
+\usepackage{enumerate} 
+\usepackage{graphicx}
+\usepackage{caption}
+\graphicspath{ {imagenes/} }
+\usepackage{tabularx,ragged2e}
+\usepackage{caption}
+% fancyhdr move to right page number
+\fancyfoot{}
+\renewcommand{\footrulewidth}{0.0pt}
+\fancyfoot[RO,RE]{\thepage} %RO=right odd, RE=right even
+\fancyfootoffset[LO,RE]{-2cm}
+%\fancyheadoffset[RO,LE]{-3cm}
+
+% fancyhdr move to right page number
+
+\DeclareCaptionType{equ}[][]
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\newcolumntype{C}{>{\Centering\arraybackslash}X} % centered "X" column
+\title{Trabajo Terminal}
+
+\subtitle{Sistema de recomendaciones basado en aprendizaje máquina y aplicación móvil conectada con emisores de señal Bluetooth Beacons (Sapphire) \\ 2017 - B034}
+\author{\\ Castro Flores Marcela \\ Galindo García Adrián Eduardo \\ Murga Dionicio Rubén Adolfo}
+\organization{\\Escuela Superior de Cómputo, IPN}
+
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{listings}
+\usepackage{xcolor}
+
+\colorlet{punct}{red!60!black}
+\definecolor{background}{HTML}{EEEEEE}
+\definecolor{delim}{RGB}{20,105,176}
+\colorlet{numb}{magenta!60!black}
+
+\lstdefinelanguage{json}{
+    basicstyle=\normalfont\ttfamily,
+    numbers=left,
+    numberstyle=\scriptsize,
+    stepnumber=1,
+    numbersep=8pt,
+    showstringspaces=false,
+    breaklines=true,
+    frame=lines,
+    backgroundcolor=\color{background},
+    literate=
+     *{0}{{{\color{numb}0}}}{1}
+      {1}{{{\color{numb}1}}}{1}
+      {2}{{{\color{numb}2}}}{1}
+      {3}{{{\color{numb}3}}}{1}
+      {4}{{{\color{numb}4}}}{1}
+      {5}{{{\color{numb}5}}}{1}
+      {6}{{{\color{numb}6}}}{1}
+      {7}{{{\color{numb}7}}}{1}
+      {8}{{{\color{numb}8}}}{1}
+      {9}{{{\color{numb}9}}}{1}
+      {:}{{{\color{punct}{:}}}}{1}
+      {,}{{{\color{punct}{,}}}}{1}
+      {\{}{{{\color{delim}{\{}}}}{1}
+      {\}}{{{\color{delim}{\}}}}}{1}
+      {[}{{{\color{delim}{[}}}}{1}
+      {]}{{{\color{delim}{]}}}}{1},
+}
+
+
+\begin{document}
+%=== PAGINA VACIA ===
+\maketitle
+\thispagestyle{empty}
+%=== INDICE ===
+\tableofcontents
+ 
+\listoffigures
+ 
+\listoftables
+%=========================================================
+\chapter{Introducción}
+
+\cfinput{Introduccion/introduccion}
+
+%=========================================================
+
+\chapter{Marco teórico}
+
+\cfinput{MarcoTeorico/marco_teorico}
+
+%=========================================================
+\chapter{Bosquejo general de la solución}
+
+\cfinput{bosquejoGeneral/analisis_factibilidad}
+\cfinput{bosquejoGeneral/comparaciones}
+\cfinput{bosquejoGeneral/analisis_riesgos}
+\cfinput{disenoAplicacion/arquitectura}
+\cfinput{bosquejoGeneral/analisis_requerimientos}
+
+%=========================================================
+\chapter{Modelo de datos}
+
+\cfinput{disenoAplicacion/modeloDatosER}
+\cfinput{ModeloDatos/generadorRegistros}
+\cfinput{ModeloDatos/generadorRegistros11}
+
+%=========================================================
+\chapter{Aplicaciones móviles}
+\cfinput{appMovil/Cliente/prototipo1}	
+\cfinput{appMovil/Vendedor/prototipo1}	
+\cfinput{appMovil/Vendedor/prototipo2}
+\cfinput{appMovil/Vendedor/prototipo3}	
+\cfinput{appMovil/Vendedor/prototipoFinal}	
+
+
+%=========================================================
+\chapter{Servidores}
+\cfinput{Servidores/Middleware/prototipo1}	
+\cfinput{Servidores/Middleware/prototipo2}
+\cfinput{Servidores/Middleware/prototipo3}	
+\cfinput{Servidores/Middleware/prototipo4}
+
+\cfinput{Servidores/REST/prototipo1}
+\cfinput{Servidores/REST/prototipo2}
+\cfinput{Servidores/REST/prototipo3}
+\cfinput{Servidores/REST/prototipo4}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%=========================================================
+%\chapter{Prototipo final: Integración de los módulos del sistema}
+%\cfinput{protoFinal/protoFinal}	
+
+%=========================================================
+%\chapter{Conclusiones}
+\chapter{Conclusiones}
+\cfinput{futuro/conclusiones}
+
+%%=========================================================
+\chapter{Trabajo a futuro}
+\cfinput{futuro/trabajoFuturo}
+%=========================================================
+\chapter{Glosario de términos}
+\cfinput{glosario/terminos}	
+%=========================================================
+\chapter{Acrónimos}
+\cfinput{glosario/acronimos}	
+%
+%=========================================================
+\renewcommand\bibname{Referencias y bibliografías}
+\cfinput{Bibliografia/bibliografia}
+
+\chapter{Anexos}
+\cfinput{Anexos/anexos}
+
+\end{document}
+
+%=========================================================
+%\chapter{Modelo de datos}
+
+
+%\cfinput{disenoAplicacion/arquitectura}
+%\cfinput{disenoAplicacion/servidor}
+%\cfinput{disenoAplicacion/diagramasClases}
+%\cfinput{disenoAplicacion/diagramasSecuencia}
+
+%\cfinput{disenoAplicacion/interfaces}
+%\cfinput{disenoAplicacion/mapaNavegacion}

@@ -1,0 +1,112 @@
+\title{\textbf{
+Tabla de diccionario de datos Compra
+}} \\
+
+El cuadro \ref{table:dic-Compra} indica la descripción correspondiente de la entidad Compra.
+\label{Entidad-Compra}
+\FloatBarrier
+\begin{table}[htb]
+\setlength\extrarowheight{2pt}
+\begin{tabular}{|p{2.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{5.5cm}|}
+	\hline
+	\multicolumn{2}{|c|} 
+	{{
+		\cellcolor[HTML]{00009B}{\color[HTML]{FFFFFF} Nombre de la relación: }		
+	}} &
+	\multicolumn{4}{|c|} {{ Compra }} \\
+	\hline
+	\multicolumn{2}{|c|} 
+	{{
+		\cellcolor[HTML]{00009B}{\color[HTML]{FFFFFF} Objetivo: }		
+	}} &
+	\multicolumn{4}{|c|} {{ Tabla que almacenará los registros del inventario de un producto. }} \\
+	\hline
+	\rowcolor[HTML]{3166FF} 
+	{\color[HTML]{FFFFFF} Campo }  & 
+	{\color[HTML]{FFFFFF} Tipo de dato } & 
+	{\color[HTML]{FFFFFF} Tamaño } & 
+	{\color[HTML]{FFFFFF} Constraint } & 
+	{\color[HTML]{FFFFFF} No nulo } & 
+	{\color[HTML]{FFFFFF} Descripción } \\ 
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} id\_compra } &
+	bigint &
+	20 &
+	PK &
+	X  & 
+	Identificador de la compra.   \\ 
+	\hline
+	
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} fk\_id\_producto } &
+	bigint &
+	20 &
+	FK &
+	X &
+	Identificador del producto.  \\ 
+	\hline
+	
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} fk\_id\_cliente } &
+	bigint &
+	20 &
+	FK &
+	X &
+	Identificador del cliente.  \\ 
+	\hline
+	
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} fk\_id\_promocion } &
+	smallint &
+	5 &
+	FK &
+	 &
+	Identificador de una posible promoción.  \\ 
+	\hline
+	
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} fecha\_compra } &
+	timestamp &
+	 &
+	&
+	X  & 
+	Fecha en que se realizó la compra.   \\ 
+	\hline
+	
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} recomendando } &
+	char &
+	1 &
+	&
+	X & 
+	Indica si el producto comprado ha sido recomendado por el sistema o no.   \\ 
+	\hline
+	
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} calificacion\_producto } &
+	smallint &
+	5 &
+	 &
+	&
+	Calificación que el cliente otorga al producto comprado.  \\ 
+	\hline
+	
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} no\_ticket } &
+	varchar &
+	150 &
+	 &
+	&
+	Número de ticket generado a partir de las iniciales de la tienda, la fecha de compra en formato Ymd, identificador del cliente y un número de 8 digitos aleatorio.  \\ 
+	\hline
+
+	%\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} fecha\_pedido } &
+	%timestamp &
+	% &
+	%&
+	%X  & 
+	%Fecha en la que se realizó el pedido.   \\ 
+	%\hline
+				
+\end{tabular}
+
+\caption{Tabla de diccionario de datos Compra. }
+\label{table:dic-Compra}
+\end{table}
+\FloatBarrier
+
+
+

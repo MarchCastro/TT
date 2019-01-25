@@ -1,0 +1,60 @@
+\title{\textbf{
+Tabla de diccionario de datos Atributo
+}} \\
+
+El cuadro \ref{table:dic-Atributo} indica la descripción correspondiente de la entidad Atributo.
+\label{Entidad-Atributo}
+\FloatBarrier
+\begin{table}[htb]
+\setlength\extrarowheight{2pt}
+\begin{tabular}{|p{2.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{5.5cm}|}
+	\hline
+	\multicolumn{2}{|c|}
+	{{
+		\cellcolor[HTML]{00009B}{\color[HTML]{FFFFFF} Nombre de la relación: }		
+	}} &
+	\multicolumn{4}{|c|} {{  Atributo }} \\
+	\hline
+	\multicolumn{2}{|c|} 
+	{{
+		\cellcolor[HTML]{00009B}{\color[HTML]{FFFFFF} Objetivo: }		
+	}} &
+	\multicolumn{4}{|p{10cm}|} {{ Tabla que almacenará los valores de los tipos de atributos que puede tener un producto. }} \\
+	\hline
+	\rowcolor[HTML]{3166FF}
+	{\color[HTML]{FFFFFF} Campo }  & 
+	{\color[HTML]{FFFFFF} Tipo de dato } & 
+	{\color[HTML]{FFFFFF} Tamaño } & 
+	{\color[HTML]{FFFFFF} Constraint } & 
+	{\color[HTML]{FFFFFF} No nulo } & 
+	{\color[HTML]{FFFFFF} Descripción } \\ 
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} id\_atributo } &
+	integer &
+	10 &
+	PK &
+	X  & 
+	Identificador del atributo. \\
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} fk\_tipo\_atributo } &
+	integer &
+	10 &
+	FK &
+	X  & 
+	Identificador del tipo de atributo. \\
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} valor } &
+	varchar &
+	100 &
+	 &
+	X  & 
+	Valor específico del tipo de atributo. \\
+	\hline
+\end{tabular}
+\caption{Tabla de diccionario de datos Atributo. }
+\label{table:dic-Atributo}
+\end{table}
+\FloatBarrier
+
+
+

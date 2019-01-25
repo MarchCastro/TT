@@ -1,0 +1,1488 @@
+\section{Tornado}
+Tornado es un framework Web de Python y una biblioteca de red asíncrona, desarrollada originalmente en FriendFeed. Mediante el uso de E / S de red sin bloqueo, Tornado puede escalar a decenas de miles de conexiones abiertas, lo que lo hace ideal para largas sondeos, WebSockets y otras aplicaciones que requieren una conexión de larga duración para cada usuario. En la figura \ref{tornado} se puede aprenciar el logo del framework \cite{Tornado}. 
+
+\FloatBarrier
+\begin{figure}[htbp!]
+		\centering
+			\includegraphics[width=0.3 \textwidth]{imagenes/tornado}
+		\caption{Logo de Tornado. \cite{Tornado}}
+		\label{tornado}
+\end{figure}
+\FloatBarrier
+
+\subsection{Sistema de gestión, procesamiento y proveedor de datos de Retail}
+
+%--------------------------------------------------
+\subsection{Prototipo 1: Desarrollo de servicios REST}
+
+%--------------------------------------------------
+\subsubsection{Análisis}
+Dentro del análisis para el desarrollo de este prototipo se incorporan los siguientes requerimientos funcionales:
+\begin{itemize}
+\item \hyperlink{RFSGPyPDR}{RFGPPR6 Registrar folletos.}
+\item \hyperlink{RFSGPyPDR}{RFGPPR7 Obtener folletos: Administrador.}
+\item \hyperlink{RFSGPyPDR}{RFGPPR8 Proveer Beacons registrados.}
+\item \hyperlink{RFSGPyPDR}{RFGPPR9 Proveer establecimientos registrados.}
+\item \hyperlink{RFSGPyPDR}{RFGPPR10 Proveer departamentos dentro de tienda.}
+\item \hyperlink{RFSGPyPDR}{RFGPPR11 Insertar/Actualizar Beacons del sistema.}
+\item \hyperlink{RFSGPyPDR}{RFGPPR12 Obtener atributos clave-valor de Beacons.}
+\item \hyperlink{RFSGPyPDR}{RFGPPR13 Proveer token de autenticación: Administrador.}
+\item \hyperlink{RFSGPyPDR}{RFGPPR14 Proveer token de autenticación: Vendedor.}
+\item \hyperlink{RFSGPyPDR}{RFGPPR15 Actualizar token de Firebase Cloud Messaging (FCM) para vendedor.}
+\item \hyperlink{RFSGPyPDR}{RFGPPR16 Actualizar datos básicos del perfil del vendedor.}
+\item \hyperlink{RFSGPyPDR}{RFGPPR17 Obtener clientes en departamento.}
+\item \hyperlink{RFSGPyPDR}{RFGPPR18 Obtener detalles y estadísticas de cliente.}
+\item \hyperlink{RFSGPyPDR}{RFGPPR19 Obtener recomendaciones por departamento.}
+\item \hyperlink{RFSGPyPDR}{RFGPPR20 Enviar recomendaciones a cliente.}
+\item \hyperlink{RFSGPyPDR}{RFGPPR21 Insertar/Actualizar Beacons de desde la AIPV.}
+\item \hyperlink{RFSGPyPDR}{RFGPPR22 Registrar clientes.}
+\item \hyperlink{RFSGPyPDR}{RFGPPR23 Obtener información del cliente.}
+\item \hyperlink{RFSGPyPDR}{RFGPPR24 Proveer de productos.}
+\item \hyperlink{RFSGPyPDR}{RFGPPR25 Proveer de folletos.}
+\item \hyperlink{RFSGPyPDR}{RFGPPR26 Agregar producto a favoritos.}
+\item \hyperlink{RFSGPyPDR}{RFGPPR27 Actualizar token de Firebase Cloud Messaging para cliente.}
+\item \hyperlink{RFSGPyPDR}{RFGPPR28 Publicar ubicación de cliente en Kafka.}
+\item \hyperlink{RFSGPyPDR}{RFGPPR29 Obtener recomendaciones globales.}
+\end{itemize}
+De igual manera, se incorporan los requerimientos funcionales de la sección
+\hyperlink{RFAIDP}{RFAIDP Requerimientos Funcionales de Aplicación Interactiva Difusora de Productos.}
+\begin{itemize}
+\item \hyperlink{RFAIDP1}{RFAIDP1 Iniciar sesión.}
+\item \hyperlink{RFAIDP2}{RFAIDP2 Consultar folletos.}
+\item \hyperlink{RFAIDP4}{RFAIDP4 Consultar logros.}
+\item \hyperlink{RFAIDP5}{RFAIDP5 Añadir producto a favoritos.}
+\item \hyperlink{RFAIDP6}{RFAIDP6 Visualizar favoritos.}
+\item \hyperlink{RFAIDP7}{RFAIDP7 Consultar recomendaciones.}
+\item \hyperlink{RFAIDP8}{RFAIDP8 Buscar productos.}
+\item \hyperlink{RFAIDP9}{RFAIDP9  Actualizar datos personales.}
+\item \hyperlink{RFAIDP11}{RFAIDP11 Actualizar gustos genéricos.}
+\item \hyperlink{RFAIDP12}{RFAIDP12 Consultar beneficios.}
+\item \hyperlink{RFAIDP13}{RFAIDP13 Actualizar permisos.}
+\item \hyperlink{RFAIDP16}{RFAIDP16 Registrar cuenta nueva.}
+\item \hyperlink{RFAIDP17}{RFAIDP17 Recuperar contraseña.}
+\item \hyperlink{RFAIDP18}{RFAIDP18 Eliminar producto de favoritos.}
+\item \hyperlink{RFAIDP19}{RFAIDP19 Mostrar información de productos.}
+\end{itemize}
+
+Definidos previamente en el capítulo del ``Bosquejo general de la aplicación''  con el título de ``Requerimientos funcionales del Sistema de Gestión, Procesamiento y Proveedor de Datos Retail''. \\ \par
+
+%--------------------------------------------------
+\subsubsection{Diseño}
+Dentro de esta subsección se encuentra la documentación de los servicios REST separados por requerimientos. \\ \\
+\textit{Nota: En algunos servicios se hace uso de una notación específica ([texto, tipo de dato]), esta notación significa que el contenido del lado izquierdo de la coma es dinámico, por otro lado, el contenido derecho es el tipo de dato que debe ser el contenido dinámico.} 
+\\\\
+
+%Panel
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{\textbf{RFGPPR6 Registrar folletos}}
+\begin{itemize}
+\item Ruta: /administrador/flyers/[filter]
+\begin{itemize}
+\item Método: POST
+\item Tipo de parámetro: ruta
+\item Opciones: 'register'
+\item Cuerpo de la petición:
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+	"data": {
+          "name": "string",
+          "description": "string",
+          "init_date": "string",
+          "end_date": "string",
+          "products": [integer,...],
+          "departments": [integer,...]
+        }
+}
+\end{lstlisting}
+\item Respuesta: 
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+    "message": "string"
+}
+\end{lstlisting}
+\end{itemize}
+\end{itemize}
+
+\title{\textbf{RFGPPR7 Obtener folletos: Administrador}} %este
+\begin{itemize}
+\item Ruta: /administrador/flyers/[filter]
+\begin{itemize}
+\item Método: GET
+\item Tipo de parámetro: ruta
+\item Opciones: 'all'
+\item Respuesta: 
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+    "flyers": [
+        {
+            "departments": [
+				{
+				"planta": "string",
+                "nombre": "string",
+                "tienda": "string",
+                "fk_id_tienda": integer,
+                "id_departamento": integer
+				},...
+            ],
+            "fecha_inicio": "string",
+            "fecha_fin": "string",
+            "descripcion": "string",
+            "products": [
+            {
+            	"precio_venta": "string",
+                "producto": "string",
+                "tienda": "string",
+                "promocion": "string",
+                "marca": "string",
+                "stock": integer}, ...],
+            "titulo": "string",
+            "id_anuncio": integer,
+            "ruta_imagen": "string"
+        },
+        ...]
+}
+\end{lstlisting}
+\end{itemize}
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\title{\textbf{RFGPPR8 Proveer Beacons registrados}}
+\begin{itemize}
+\item Ruta: /beacon-monitor/[beacon]
+\begin{itemize}
+\item Método: GET
+\item Tipo de parámetro: ruta
+\item Opciones: 'all', [id de Beacon, string]
+\item Respuesta para opción 'all': 
+\begin{lstlisting}[language=json,firstnumber=1]
+{"beacons": [{
+  "id_beacon" : integer,
+  "fk_id_departamento": integer,
+  "posicion_geografica" : [float, float],
+},
+{...},
+{...},
+...]}
+\end{lstlisting}
+\item Respuesta para opción [id de Beacon, string]:
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+	"identifier": "string",
+    "shadow": {
+        "id": integer,
+        "name": "string",
+        "tags": [],
+        "organization_id": integer,
+        "location": {
+            "timezone": "America/Los_Angeles"
+        },
+        "public": boolean,
+        "development_mode": boolean
+    },
+    "alerts_configuration": {
+        "beacon_stolen_notifications": "string",
+        "beacon_fallen_notifications": "string",
+        "beacon_battery_notifications": "string",
+        "updated_at": string
+    },
+    "alerts": [],
+    "hardware_type": "string",
+    "hardware_revision": "string",
+    "hardware_footprint": "string",
+    "color": "string",
+    "form_factor": "string",
+    "status_report": {
+        "battery_percentage": integer,
+        "battery_voltage": integer,
+        "estimated_battery_lifetime": integer,
+        "clock_offset": integer,
+        "firmware_version": "string",
+        "last_synced": string,
+        "public": boolean,
+        "broken_motion": boolean,
+        "broken_temperature": boolean,
+        "missing_telemetry_data": boolean  },
+    "settings": {
+        "general": {
+            "motion_detection_enabled": boolean,
+            "motion_only_enabled": boolean,
+            "dark_to_sleep_enabled": boolean,
+            "dark_to_sleep_threshold": integer,
+            "conditional_broadcasting": "string",
+            "flip_to_sleep_enabled": boolean,
+            "smart_power_mode_enabled": boolean,
+            "temperature_offset": integer,
+            "eddystone_configuration_service_enabled": boolean,
+            "nfc_records": [
+                {
+                    "data": "string",
+                    "type": "string"
+                }
+            ],
+            "automatic_firmware_update_enabled": boolean,
+            "motion_only_delay": integer,
+            "display_access_control": boolean,
+            "wifi": {
+                "enabled": boolean,
+                "ssid": "string",
+                "password": "string"
+            },
+            "templates": {
+                "default_template": "string",
+                "lock_template": boolean
+            },
+            "schedule": {
+                "enabled": boolean,
+                "start_time": integer,
+                "stop_time": integer
+            },
+            "whitelisted_domains": [integer,integer,...],
+            "magnetometer_settings": [integer,integer,...],
+            "estimote_secure_monitoring": {
+                "enabled": boolean,
+                "krps": integer,
+                "prps": integer,
+                "seed": "integer"
+            }
+        },
+        "advertisers": {
+            "connectivity": [
+                {
+                    "index": integer,
+                    "name": "string",
+                    "power": integer,
+                    "interval": integer,
+                    "shake_to_connect_enabled": boolean,
+                    "near_to_connect_enabled": boolean
+                }
+            ],
+            "eddystone_telemetry": [
+                {
+                    "index": integer,
+                    "name": "string",
+                    "enabled": boolean,
+                    "interval": integer,
+                    "power": integer
+                }
+            ],
+            "eddystone_uid": [
+                {
+                    "index": integer,
+                    "name": "string",
+                    "enabled": boolean,
+                    "interval": integer,
+                    "power": integer,
+                    "instance_id": "string",
+                    "namespace_id": "string"
+                }
+            ],
+            "eddystone_url": [
+                {
+                    "index": integer,
+                    "name": "string",
+                    "enabled": boolean,
+                    "interval": integer,
+                    "power": integer,
+                    "url": "string"
+                }
+            ],
+            "estimote_location": [
+                {
+                    "index": int,
+                    "name": "string",
+                    "enabled": boolean,
+                    "interval": integer,
+                    "power": integer
+                }
+            ],
+            "estimote_telemetry": [
+                {
+                    "index": integer,
+                    "name": "string",
+                    "enabled": boolean,
+                    "interval": integer,
+                    "power": integer
+                }
+            ],
+            "generic": [
+                {
+                    "index": integer,
+                    "name": "string",
+                    "enabled": boolean,
+                    "power": integer,
+                    "interval": integer,
+                    "payload": "string"
+                },
+                {
+                    "index": integer,
+                    "name": "string",
+                    "enabled": boolean,
+                    "power": integer,
+                    "interval": integer,
+                    "payload": "string"
+                },
+                {
+                    "index": integer,
+                    "name": "string",
+                    "enabled": boolean,
+                    "power": integer,
+                    "interval": integer,
+                    "payload": "string"
+                }
+            ],
+            "ibeacon": [
+                {
+                    "index": integer,
+                    "name": "string",
+                    "enabled": boolean,
+                    "uuid": "string",
+                    "major": integer,
+                    "minor": integer,
+                    "power": integer,
+                    "interval": integer,
+                    "security": {
+                        "enabled": boolean,
+                        "real_id": integer,
+                        "interval_scaler": integer
+                    },
+                    "non_strict_mode_enabled": boolean
+                }
+            ],
+            "link_network": [
+                {
+                    "index": integer,
+                    "name": "string",
+                    "enabled": boolean,
+                    "interval": integer,
+                    "power": integer,
+                    "link_id": integer,
+                    "domain": "string",
+                    "measurement_period": integer
+                }
+            ]
+        }
+    },
+    "pending_settings": {
+        "advertisers": {
+            "generic": [
+                {
+                    "index": integer,
+                    "name": "string",
+                    "enabled": boolean,
+                    "power": integer,
+                    "interval": integer,
+                    "payload": "string"
+                }
+            ]
+        }
+    },
+    "mesh": {
+        "name": "string",
+        "type": "string"
+    }
+  "store": "string",
+  "department" : "string",
+}
+\end{lstlisting}
+
+\end{itemize}
+\end{itemize}
+
+\title{\textbf{RFGPPR9 Proveer establecimientos registrados}}
+\begin{itemize}
+\item Ruta: /administrador/store-monitor/{store}
+\begin{itemize}
+\item Método: GET
+\item Tipo de parámetro: ruta
+\item Opciones: 'all', [id de tienda, int]
+\item Respuesta para opción 'all':
+\begin{lstlisting}[language=json,firstnumber=1]
+{"stores": [{
+  "id_tienda" : integer,
+  "nombre" : "string",
+  "posicion_geografica" : [float, float],
+},
+{...},
+{...},
+...]}
+\end{lstlisting}
+
+\item Respuesta para opción [id de tienda, int]
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+  "id_tienda" : integer,
+  "nombre" : "string",
+  "direccion" : "string",
+  "beacon_registrados" : integer
+  "posicion_geografica" : [float, float],
+}
+\end{lstlisting}
+\end{itemize}
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{\textbf{RFGPPR10 Proveer departamentos dentro de tienda.}}
+\begin{itemize}
+\item Ruta: /administrador/departments/[id\_tienda]
+\begin{itemize}
+\item Método: GET
+\item Tipo de parámetro: ruta
+\item Opciones: [id\_tienda, int] 
+\item Respuesta exitosa: 
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+	"departments": {
+		[
+			{
+			"id_departamento": integer,
+			"fk_id_tienda": integer,
+			"nombre" : string
+			"planta" : string
+			}
+			...		
+		]	
+	}
+}
+\end{lstlisting}
+\item Respuesta erronea: 
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+	"message": string 
+}
+\end{lstlisting}
+\end{itemize}
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{\textbf{RFGPPR11 Insertar/Actualizar Beacons del sistema.}}
+\begin{itemize}
+\item Ruta: /administrador/departments/[option]
+\begin{itemize}
+\item Método: POST
+\item Tipo de parámetro: ruta
+\item Opciones: [option, string] 
+\item Respuesta exitosa: 
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+	"status": string
+}
+\end{lstlisting}
+\item Respuesta erronea: 
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+	"message": string 
+}
+\end{lstlisting}
+\end{itemize}
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{\textbf{RFGPPR12 Obtener atributos clave-valor de Beacons.}}
+\begin{itemize}
+\item Ruta: /administrador/departments/[option]
+\begin{itemize}
+\item Método: POST
+\item Tipo de parámetro: ruta
+\item Opciones: [option, string] 
+\item Respuesta exitosa: 
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+    "floor": [
+		string,...
+    ],
+    "fk_id_store": [
+       string,...
+    ],
+    "fk_id_department": [
+        string,...
+    ]
+}
+\end{lstlisting}
+\end{itemize}
+\end{itemize}
+
+
+\title{\textbf{RFGPPR13 Proveer token de autenticación: Administrador}}
+\begin{itemize}
+\item Ruta: /administrador/login
+\begin{itemize}
+\item Método: POST
+\item Cuerpo de la petición
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+	"user": "string",
+	"password": "string"
+}
+\end{lstlisting}
+\item Respuesta exitosa:
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+    "email": "string",
+    "token": "string",
+    "shop_name": "string",
+    "image": "string",
+    "id_administrador": integer,
+    "department_name": "integer",
+    "departament_id": integer,
+    "mat_surname": "string",
+    "pat_surname": "string",
+    "name": "string",
+    "shop_id": integer
+}
+\end{lstlisting}
+
+\item Respuesta erronea:
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+    "message": "string",
+}
+\end{lstlisting}
+\end{itemize}
+\end{itemize}
+%Modulo de la AIPV
+
+\title{\textbf{RFGPPR14 Proveer token de autenticación: Vendedor}}
+\begin{itemize}
+\item Ruta: /vendedor/login
+\begin{itemize}
+\item Método: POST
+\item Cuerpo de la petición
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+	"user": "string",
+	"password": "string"
+}
+\end{lstlisting}
+\item Respuesta exitosa:
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+    "email": "string",
+    "token": "string",
+    "shop_name": "string",
+    "image": "string",
+    "id_administrador": integer,
+    "department_name": "integer",
+    "departament_id": integer,
+    "mat_surname": "string",
+    "pat_surname": "string",
+    "name": "string",
+    "shop_id": integer
+}
+\end{lstlisting}
+
+\item Respuesta erronea:
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+    "message": "string",
+}
+\end{lstlisting}
+\end{itemize}
+\end{itemize}
+
+\title{\textbf{RFGPPR15 Actualizar token de Firebase Cloud Messaging (FCM) para vendedor}}
+\begin{itemize}
+\item Ruta: /vendedor/update-token-fcm
+\begin{itemize}
+\item Método: POST
+\item Cabeceras de la petición: 
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+	"Content-Type": "application/json",
+	"authorization" : string
+}
+\end{lstlisting}	
+\item Cuerpo de la petición: 
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+	"id_persona": integer,
+	"token" : string
+}
+\end{lstlisting}
+\item Respuesta exitosa: 
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+	"message": string,
+}
+\end{lstlisting}
+\end{itemize}
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{\textbf{RFGPPR16 Actualizar datos básicos del perfil del vendedor.}}
+\begin{itemize}
+\item Ruta: /vendedor
+\begin{itemize}
+\item Método: PUT
+\item Cabeceras de la petición: 
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+	"Content-Type": "application/json",
+	"authorization" : string
+}
+\end{lstlisting}
+\item Cuerpo de la petición: 
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+	"id_persona": integer,
+	"name" : string,
+	"pat_surname" : string,
+	"mat_surname" : string,
+	"email" : string,
+	"password" : string
+}
+\end{lstlisting}
+\item Respuesta exitosa: 
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+	"message": string,
+}
+\end{lstlisting}
+\end{itemize}
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{\textbf{RFGPPR17 Obtener clientes cercanos en departamento.}}
+\begin{itemize}
+\item Ruta: /vendedor/departamento/[department]
+\item Tipo de parámetro: ruta
+\item Opciones: [department, int]
+\begin{itemize}
+\item Método: GET
+\item Cabeceras de la petición: 
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+	"Content-Type": "application/json",
+	"authorization" : string
+}
+\end{lstlisting}
+\item Respuesta exitosa: 
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+	"status": string,
+	"clients": [{
+		"id_person": integer,
+		"likes": [string,...],
+		"score": integer,
+		"since": string,
+		"level": integer,
+		"image": string,
+		"sex": char,
+		"civil_status": char,
+		"department": integer,
+		"floor": string,
+		"sons": integer,
+		"age": integer,
+		"position": [integer, integer],
+		"id_beacon": integer,
+		"time": string
+	},
+		...	
+	] 
+}
+\end{lstlisting}
+\end{itemize}
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{\textbf{RFGPPR18 Obtener detalles y estadísticas de cliente.}}
+\begin{itemize}
+\item Ruta: /vendedor/client-details/[id\_persona]
+\begin{itemize}
+\item Método: GET
+\item Tipo de parámetro: ruta
+\item Opciones: [id\_persona, int] 
+\item Respuesta exitosa: 
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+	"benefits": [{
+		"description": string, 	
+		"percentage": integer, 	
+		"reward": integer, 	
+		"free_product": char, 	
+	},
+		...
+	],
+	"categories": [{
+		"id_categorie": integer,
+         "name": string,
+         "total": integer,
+         "subcategories": [{
+			"id_categorie": integer,
+			"name": string             	
+		},
+			...
+		]	
+	},
+		...
+	],
+	"purchases_stats": [{
+		"month": integer,
+		"year" : integer,
+		"total" : integer 	
+	}, 
+		...
+	],
+	"favorites" : [{
+		"id_producto": integer,
+		"producto": string,
+		"precio_venta": double,
+		"stock": integer,
+		"departamento": string,
+		"tienda": string,
+		"categoria": string,
+		"marca": string,
+		"promocion": string,
+		"fecha_agregacion":string ,		
+	},
+		...
+	]
+}
+\end{lstlisting}
+\end{itemize}
+\end{itemize}
+
+\title{\textbf{RFGPPR19 Obtener recomendaciones por departamento.}}
+\begin{itemize}
+\item Ruta: /client/recommendations/department/[id\_usuario]/[id\_departamento]
+\item Tipo de parámetro: ruta
+\item Opciones: [id\_usuario,id\_departmento, int]
+\begin{itemize}
+\item Método: GET
+\item Cabeceras de la petición: 
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+	"Content-Type": "application/json",
+	"authorization" : string
+}
+\end{lstlisting}
+\item Respuesta exitosa: 
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+	"recommendations": [{
+		"id_producto" : integer,
+  		"producto": "string",
+  		"precio_venta" : "string",
+  		"stock" : integer,
+  		"departamento" : "string",
+  		"tienda" : "string",
+  		"categoria" : "string",
+  		"marca" : "string",
+  		"promocion" : "string",
+  		"score": float,
+ 	 	"image": "string"
+	},
+		...
+	]
+}
+\end{lstlisting}
+\end{itemize}
+\end{itemize}
+
+\title{\textbf{RFGPPR20 Enviar recomendaciones a cliente.}}
+\begin{itemize}
+\item Ruta: /vendedor/recommend/[id\_usuario]/[id\_product]
+\item Tipo de parámetro: ruta
+\item Opciones: [id\_usuario,id\_product, int]
+\begin{itemize}
+\item Método: POST
+\item Cabeceras de la petición: 
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+	"Content-Type": "application/json",
+	"authorization" : string
+}
+\end{lstlisting}
+\item Respuesta exitosa: 
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+	"message": "string"
+}
+\end{lstlisting}
+\end{itemize}
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{\textbf{RFGPPR21 Insertar/Actualizar Beacons de desde la AIPV.}}
+\begin{itemize}
+\item Ruta: /beacon-monitor/update]
+\begin{itemize}
+\item Método: POST
+\item Cabeceras de la petición: 
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+	"Content-Type": "application/json",
+	"authorization" : string
+}
+\end{lstlisting}
+\item Tipo de parámetro: ruta
+\item Opciones: [option, string] 
+\item Cuerpo de la petición:
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+	"id_beacon": string,
+	"x": double,
+	"y": double,
+	"fk_id_departamento": int,
+	"id_persona": int
+}
+\end{lstlisting}
+\item Respuesta exitosa: 
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+	"status": string,
+	"clients": [
+		{
+			"id_person": integer,
+			"likes": list,
+			"score" : integer,
+			"since" : string,
+			"level" : string,
+			"image" : string,
+			"sex" : string,
+			"civil_status" : string,
+			"department" : string,
+			"floor" : integer,
+			"sons" : integer,
+			"age" : integer,
+			"position" : string,
+			"id_beacon" : integer,
+			"time" : string
+		}
+		...		
+	]	
+}
+\end{lstlisting}
+\item Respuesta erronea: 
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+	"message": string 
+}
+\end{lstlisting}
+\end{itemize}
+\end{itemize}
+
+%Modulo de la AIDP
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{\textbf{RFGPPR22 Registrar clientes: Facebook}}
+\begin{itemize}
+\item Ruta: /client
+\begin{itemize}
+\item Método: POST
+\item Cuerpo de la petición:
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+    "nombre" : "string",
+	"apellido_paterno" : "string",
+	"apellido_materno" : "string",
+	"email": "string", 
+	"password" : "string",
+	"estado_civil" : "string",
+	"fecha_nacimiento" : "string", 
+	"no_hijos" : "string",
+	"facebook" : boolean
+}
+\end{lstlisting}
+\item Respuesta: 
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+    "message": "string"
+}
+\end{lstlisting}
+\end{itemize}
+\end{itemize}
+
+% Otros modulos
+
+% Proveer procutos
+\title{\textbf{RFGPPR24 Proveer de productos}}
+\begin{itemize}
+\item Ruta: /products/[producto]
+\begin{itemize}
+\item Método: GET
+\item Tipo de parámetro: ruta
+\item Opciones: 'all', [nombre del producto, string], [id del producto, int]
+\item Respuesta para todas las opciones 'all' y [nombre del producto, string]: 
+
+\begin{lstlisting}[language=json,firstnumber=1]
+{"products": [{
+  "id_producto" : integer,
+  "producto": "string",
+  "precio_venta" : "string",
+  "stock" : integer,
+  "departamento" : "string",
+  "tienda" : "string",
+  "categoria" : "string",
+  "marca" : "string",
+  "promocion" : "string",
+  "imagen": "string"
+},
+{...},
+{...},
+...]}
+\end{lstlisting}
+\item Respuesta para opción [id del producto, int]:
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+  "id_producto" : integer,
+  "producto": "string",
+  "precio_venta" : "string",
+  "stock" : integer,
+  "departamento" : "string",
+  "tienda" : "string",
+  "categoria" : "string",
+  "marca" : "string",
+  "promocion" : "string",
+  "imagen": "string"
+}
+\end{lstlisting}
+\end{itemize}
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{\textbf{RFGPPR25 Proveer folletos}}
+\begin{itemize}
+\item Ruta: /dashboard-client/
+\begin{itemize}
+\item Método: GET
+\item Tipo de parámetro: ruta
+\item Respuesta: 
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+    "flyers": [
+        {
+            "departments": [
+				{
+				"planta": "string",
+                "nombre": "string",
+                "tienda": "string",
+                "fk_id_tienda": integer,
+                "id_departamento": integer
+				},...
+            ],
+            "fecha_inicio": "string",
+            "fecha_fin": "string",
+            "descripcion": "string",
+            "products": [
+            {
+            	"precio_venta": "string",
+                "producto": "string",
+                "tienda": "string",
+                "promocion": "string",
+                "marca": "string",
+                "stock": integer}, ...],
+            "titulo": "string",
+            "id_anuncio": integer,
+            "ruta_imagen": "string"
+        },
+        ...]
+}
+\end{lstlisting}
+\end{itemize}
+\end{itemize}
+
+
+\title{\textbf{RFGPPR27 Actualizar token de Firebase Cloud Messaging para cliente.}}
+\begin{itemize}
+\item Ruta: /client/update-token-fcm
+\begin{itemize}
+\item Método: POST
+\item Cuerpo de la petición: 
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+	 "id_persona" : string, 
+	 "token": string
+}
+\end{lstlisting}
+\item Respuesta exitosa: 
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+	"message" : string 
+}
+\end{lstlisting}
+\end{itemize}
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{\textbf{RFGPPR28 Publicar ubicación de cliente en Kafka.}}
+\begin{itemize}
+\item Ruta: /client/location
+\begin{itemize}
+\item Método: POST
+\item Cuerpo de la petición: 
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+	 "id_person" : integer, 
+	 "fk_id_departament": integer, 
+	 "id_beacon": integer
+}
+\end{lstlisting}
+\item Respuesta exitosa: 
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+	"message" : string 
+}
+\end{lstlisting}
+\end{itemize}
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%AIDP%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+A continuación se muestran los servicios REST para los \hyperlink{RFAIDP}{RFAIDP Requerimientos Funcionales de Aplicación Interactiva Difusora de Productos.}\\ \par 
+\title{\textbf{RFAIDP1 Iniciar sesión}}
+\begin{itemize}
+\item Ruta: /client/login/
+\begin{itemize}
+\item Método: POST
+\item Tipo de parámetro: ruta
+\item Cuerpo de la petición:
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+	"email": string, 
+	"password": string,
+}
+\end{lstlisting}
+\item Respuesta: 
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+    "nombre" : "string",
+	"apellido_paterno" : "string",
+	"apellido_materno" : "string",
+	"email": "string", 
+	"password" : "string",
+	"estado_civil" : "string",
+	"fecha_nacimiento" : "string", 
+	"no_hijos" : "string",
+	"imagen" : "string"
+}
+\end{lstlisting}
+\end{itemize}
+\end{itemize}
+\title{\textbf{RFAIDP2 Consultar folletos}}
+\begin{itemize}
+\item Ruta: /dashboard-client/
+\begin{itemize}
+\item Método: GET
+\item Tipo de parámetro: ruta
+\item Respuesta: 
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+    "flyers": [
+        {
+            "departments": [
+				{
+				"planta": "string",
+                "nombre": "string",
+                "tienda": "string",
+                "fk_id_tienda": integer,
+                "id_departamento": integer
+				},...
+            ],
+            "fecha_inicio": "string",
+            "fecha_fin": "string",
+            "descripcion": "string",
+            "products": [
+            {
+            	"precio_venta": "string",
+                "producto": "string",
+                "tienda": "string",
+                "promocion": "string",
+                "marca": "string",
+                "stock": integer}, ...],
+            "titulo": "string",
+            "id_anuncio": integer,
+            "ruta_imagen": "string"
+        },
+        ...]
+}
+\end{lstlisting}
+\end{itemize}
+\end{itemize}
+\title{\textbf{RFAIDP4 Consultar logros}}
+\begin{itemize}
+\item Ruta: /client/get-achievements/[idcliente]
+\begin{itemize}
+\item Tipo de parámetro: ruta
+\item Opciones: [id\_cliente, int]
+\item Método: GET
+\item Respuesta:
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+	"id_logro": integer, 
+	"nombre": "string",
+	"descripcion": "string",
+	"icono": "string",
+	"recompensa": "string"
+}
+\end{lstlisting}
+\end{itemize}
+\end{itemize}
+\title{\textbf{RFAIDP5 Añadir producto a favoritos}}
+\begin{itemize}
+\item Ruta: /client/favourites
+\begin{itemize}
+\item Método: POST
+\item Cuerpo de la petición:
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+	"id_persona": integer, 
+	"id_producto": integer,
+	"favorito": boolean (true)
+}
+\end{lstlisting}
+\item Respuesta: 
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+    "message": "string"
+}
+\end{lstlisting}
+\end{itemize}
+\end{itemize}
+\title{\textbf{RFAIDP6 Visualizar favoritos}}
+\begin{itemize}
+\item Ruta: /client/favourites?id\_persona=[idcliente]
+\begin{itemize}
+\item Tipo de parámetro: ruta
+\item Opciones: [id\_cliente, int]
+\item Método: GET
+\item Respuesta:
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+	"id_producto": integer ,
+	"producto": "string",
+	"precio_venta": "string",
+	"stock": integer,
+	"departamento": "string",
+	"tienda": "string",
+	"marca": "string", 
+	"promocion": "string",
+	"categoria": "string",
+	"image": "string"
+}
+\end{lstlisting}
+\end{itemize}
+\end{itemize}
+\title{\textbf{RFAIDP7 Consultar recomendaciones}}
+\begin{itemize}
+\item Ruta: /client/get-global-recom/[idcliente]
+\begin{itemize}
+\item Tipo de parámetro: ruta
+\item Opciones: [id\_cliente, int]
+\item Método: GET
+\item Respuesta:
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+	"id_producto": integer ,
+	"producto": "string",
+	"precio_venta": "string",
+	"stock": integer,
+	"departamento": "string",
+	"tienda": "string",
+	"marca": "string", 
+	"promocion": "string",
+	"categoria": "string",
+	"image": "string"
+}
+\end{lstlisting}
+\end{itemize}
+\end{itemize}
+\title{\textbf{RFAIDP8 Buscar productos}}
+\begin{itemize}
+\item Ruta: /products/busqueda?product=[idproducto]
+\begin{itemize}
+\item Método: GET
+\item Tipo de parámetro: ruta
+\item Opciones: [id\_producto, int]
+\item Respuesta: 
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+	"id_producto": integer ,
+	"producto": "string",
+	"precio_venta": "string",
+	"stock": integer,
+	"departamento": "string",
+	"tienda": "string",
+	"marca": "string", 
+	"promocion": "string",
+	"categoria": "string",
+	"imagenes": "string"
+}
+\end{lstlisting}
+\end{itemize}
+\end{itemize}
+\title{\textbf{RFAIDP9  Actualizar datos personales}}
+\\ \par
+\textit{Para este caso de uso se presentan tanto la sección para mostrar los datos que ya fueron actualizados, como para modificar los datos de cada usuario.}
+\begin{itemize}
+\item Ruta: /client/personal-info/[idcliente]
+\begin{itemize}
+\item Método: GET
+\item Tipo de parámetro: ruta
+\item Opciones: [id\_cliente, int]
+\item Respuesta: 
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+	"sexo": "string",
+	"estado_civil": "string",
+	"puntaje": int,
+	"fecha_nacimiento": "string"
+}
+\end{lstlisting}
+\end{itemize}
+\end{itemize}
+
+\begin{itemize}
+\item Ruta: /client/personal-info/[idcliente]
+\begin{itemize}
+\item Método: POST
+\item Tipo de parámetro: ruta
+\item Opciones: [id\_cliente, int]
+\item Cuerpo de la petición:
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+	"sexo": "string",
+	"estado_civil": "string",
+	"puntaje": int,
+	"fecha_nacimiento": "string"
+}
+\end{lstlisting}
+\item Respuesta: 
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+    "message": "string"
+}
+\end{lstlisting}
+\end{itemize}
+\end{itemize}
+
+\title{\textbf{RFAIDP11 Actualizar gustos genéricos}}
+\\ \par
+\textit{Para este caso de uso se presentan tanto la sección para mostrar los datos que ya fueron actualizados, como para modificar dichas opciones.}
+\begin{itemize}
+\item Ruta: /client/likes/[idcliente]
+\begin{itemize}
+\item Método: GET
+\item Tipo de parámetro: ruta
+\item Opciones: [id\_cliente, int]
+\item Respuesta: 
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+	"Hogar": boolean ,
+	"Computadoras": boolean,
+	"Celulares y tablets": boolean,
+	"TV y video": boolean,
+	"Camaras": boolean,
+	"Audio": boolean,
+	"Videojuegos": boolean, 
+	"Drones y radio control": boolean,
+	"Wearables": boolean,
+	"Instrumentos musicales": boolean,
+	"Hogar inteligente": boolean,
+	"Peliculas y series": boolean,
+	"Autos y motos": boolean
+}
+\end{lstlisting}
+\end{itemize}
+\end{itemize}
+
+\begin{itemize}
+\item Ruta: /client/likes/[idcliente]
+\begin{itemize}
+\item Método: POST
+\item Tipo de parámetro: ruta
+\item Opciones: [id\_cliente, int]
+\item Cuerpo de la petición:
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+	"Hogar": boolean ,
+	"Computadoras": boolean,
+	"Celulares y tablets": boolean,
+	"TV y video": boolean,
+	"Camaras": boolean,
+	"Audio": boolean,
+	"Videojuegos": boolean, 
+	"Drones y radio control": boolean,
+	"Wearables": boolean,
+	"Instrumentos musicales": boolean,
+	"Hogar inteligente": boolean,
+	"Peliculas y series": boolean,
+	"Autos y motos": boolean
+}
+\end{lstlisting}
+\item Respuesta: 
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+    "message": "string"
+}
+\end{lstlisting}
+\end{itemize}
+\end{itemize}
+
+\title{\textbf{RFAIDP12 Consultar beneficios}}
+\begin{itemize}
+\item Ruta: /client/get-bneficts/[idcliente]
+\begin{itemize}
+\item Tipo de parámetro: ruta
+\item Opciones: [id\_cliente, int]
+\item Método: GET
+\item Respuesta:
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+	"id_beneficio": integer, 
+	"descripcion": "string",
+	"porcentaje": integer,
+	"gratificacion": integer,
+	"producto_gratis": "string"
+}
+\end{lstlisting}
+\end{itemize}
+\end{itemize}
+\title{\textbf{RFAIDP13 Actualizar permisos}}
+\\ \par
+\textit{Para este caso de uso se presentan tanto la sección para mostrar los datos que ya fueron actualizados, como para modificar dichos permisos.}
+\begin{itemize}
+\item Ruta: /client/permissions/[idcliente]
+\begin{itemize}
+\item Método: POST
+\item Tipo de parámetro: ruta
+\item Opciones: [id\_cliente, int]
+\item Cuerpo de la petición:
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+	"edad": boolean ,
+	"estado_civil": boolean,
+	"hijos": boolean,
+	"compras": boolean,
+	"favoritos": boolean,
+ 	"recom_presenciales": boolean
+}
+\end{lstlisting}
+\item Respuesta: 
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+    "message": "string"
+}
+\end{lstlisting}
+\end{itemize}
+\end{itemize}
+
+\begin{itemize}
+\item Ruta: /client/permissions/[idcliente]
+\item Tipo de parámetro: ruta
+\item Opciones: [id\_cliente, int]
+\begin{itemize}
+\item Método: GET
+\item Respuesta: 
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+	"edad": boolean ,
+	"estado_civil": boolean,
+	"hijos": boolean,
+	"compras": boolean,
+	"favoritos": boolean,
+ 	"recom_presenciales": boolean
+}
+\end{lstlisting}
+\end{itemize}
+\end{itemize}
+
+\title{\textbf{RFAIDP16 Registrar cuenta nueva}}
+\begin{itemize}
+\item Ruta: /client
+\begin{itemize}
+\item Método: POST
+\item Cuerpo de la petición:
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+    "nombre" : "string",
+	"apellido_paterno" : "string",
+	"apellido_materno" : "string",
+	"email": "string", 
+	"password" : "string",
+	"estado_civil" : "string",
+	"fecha_nacimiento" : "string", 
+	"no_hijos" : "string",
+\end{lstlisting}
+\item Respuesta: 
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+    "message": "string"
+}
+\end{lstlisting}
+\end{itemize}
+\end{itemize}
+\title{\textbf{RFAIDP17 Recuperar contraseña}}
+\begin{itemize}
+\item Ruta: /client/retrieve-password
+\begin{itemize}
+\item Método: POST
+\item Cuerpo de la petición:
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+	"email": "string"
+}
+\end{lstlisting}
+\item Respuesta: 
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+    "message": "string"
+}
+\end{lstlisting}
+\end{itemize}
+\end{itemize}
+\title{\textbf{RFAIDP18 Eliminar producto de favoritos}}
+\begin{itemize}
+\item Ruta: /client/favourites
+\begin{itemize}
+\item Método: POST
+\item Cuerpo de la petición:
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+	"id_persona": integer, 
+	"id_producto": integer,
+	"favorito": boolean (false)
+}
+\end{lstlisting}
+\item Respuesta: 
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+    "message": "string"
+}
+\end{lstlisting}
+\end{itemize}
+\end{itemize}
+\title{\textbf{RFAIDP19 Mostrar información de productos}}
+\begin{itemize}
+\item Ruta: /products/[idproducto]
+\begin{itemize}
+\item Método: GET
+\item Tipo de parámetro: ruta
+\item Opciones: [id\_producto, int]
+\item Respuesta: 
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+	"id_producto": integer ,
+	"producto": "string",
+	"precio_venta": "string",
+	"stock": integer,
+	"departamento": "string",
+	"tienda": "string",
+	"marca": "string", 
+	"promocion": "string",
+	"categoria": "string",
+	"imagenes": ArrayList<String> "string"
+}
+\end{lstlisting}
+\end{itemize}
+\end{itemize}
+

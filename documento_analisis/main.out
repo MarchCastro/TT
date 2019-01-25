@@ -1,0 +1,190 @@
+\BOOKMARK [0][-]{chapter.1}{Introducci\363n}{}% 1
+\BOOKMARK [1][-]{section.1.1}{Contexto}{chapter.1}% 2
+\BOOKMARK [1][-]{section.1.2}{Problem\341tica}{chapter.1}% 3
+\BOOKMARK [1][-]{section.1.3}{Estado del arte}{chapter.1}% 4
+\BOOKMARK [2][-]{subsection.1.3.1}{Tienda departamental Macy's}{section.1.3}% 5
+\BOOKMARK [2][-]{subsection.1.3.2}{Supermercado Carrefour}{section.1.3}% 6
+\BOOKMARK [2][-]{subsection.1.3.3}{Tienda de ropa American Eagle Outfitters}{section.1.3}% 7
+\BOOKMARK [2][-]{subsection.1.3.4}{Aplicaci\363n makeitapp}{section.1.3}% 8
+\BOOKMARK [2][-]{subsection.1.3.5}{TT 2015-A056 API para el desarrollo de sistemas de recomendaci\363n.}{section.1.3}% 9
+\BOOKMARK [2][-]{subsection.1.3.6}{TT 2010-0063 Trabajo Terminal Sistema generador de recomendaciones para una tienda en-l\355nea de videojuegos.}{section.1.3}% 10
+\BOOKMARK [1][-]{section.1.4}{Soluci\363n propuesta}{chapter.1}% 11
+\BOOKMARK [1][-]{section.1.5}{Justificaci\363n}{chapter.1}% 12
+\BOOKMARK [1][-]{section.1.6}{Objetivos}{chapter.1}% 13
+\BOOKMARK [2][-]{subsection.1.6.1}{Objetivo general}{section.1.6}% 14
+\BOOKMARK [2][-]{subsection.1.6.2}{Objetivos espec\355ficos}{section.1.6}% 15
+\BOOKMARK [1][-]{section.1.7}{Metodolog\355a}{chapter.1}% 16
+\BOOKMARK [1][-]{section.1.8}{Beneficios esperados}{chapter.1}% 17
+\BOOKMARK [1][-]{section.1.9}{Alcance}{chapter.1}% 18
+\BOOKMARK [1][-]{section.1.10}{Limitantes}{chapter.1}% 19
+\BOOKMARK [0][-]{chapter.2}{Marco te\363rico}{}% 20
+\BOOKMARK [1][-]{section.2.1}{Aprendizaje m\341quina}{chapter.2}% 21
+\BOOKMARK [2][-]{subsection.2.1.1}{Antecedentes de la Inteligencia Artificial}{section.2.1}% 22
+\BOOKMARK [3][-]{subsubsection.2.1.1.1}{Nacimiento [1952-1956]}{subsection.2.1.1}% 23
+\BOOKMARK [3][-]{subsubsection.2.1.1.2}{Primer invierno de la Inteligencia Artificial [1974-1980] }{subsection.2.1.1}% 24
+\BOOKMARK [3][-]{subsubsection.2.1.1.3}{La explosi\363n de los 80's [1980-1987]}{subsection.2.1.1}% 25
+\BOOKMARK [3][-]{subsubsection.2.1.1.4}{Segundo Invierno de la Inteligencia Artificial [1987-1993]}{subsection.2.1.1}% 26
+\BOOKMARK [3][-]{subsubsection.2.1.1.5}{Explosi\363n y adopci\363n comercial [2006-Actual]}{subsection.2.1.1}% 27
+\BOOKMARK [2][-]{subsection.2.1.2}{Tipos de aprendizaje}{section.2.1}% 28
+\BOOKMARK [3][-]{subsubsection.2.1.2.1}{Aprendizaje supervisado}{subsection.2.1.2}% 29
+\BOOKMARK [2][-]{subsection.2.1.3}{Aprendizaje no supervisado}{section.2.1}% 30
+\BOOKMARK [3][-]{subsubsection.2.1.3.1}{Algoritmo de agrupamiento K-means}{subsection.2.1.3}% 31
+\BOOKMARK [2][-]{subsection.2.1.4}{Algoritmos de Aprendizaje supervisado}{section.2.1}% 32
+\BOOKMARK [3][-]{subsubsection.2.1.4.1}{Hiperplano}{subsection.2.1.4}% 33
+\BOOKMARK [3][-]{subsubsection.2.1.4.2}{Separabilidad lineal}{subsection.2.1.4}% 34
+\BOOKMARK [3][-]{subsubsection.2.1.4.3}{Red neuronal artificial}{subsection.2.1.4}% 35
+\BOOKMARK [3][-]{subsubsection.2.1.4.4}{Perceptr\363n}{subsection.2.1.4}% 36
+\BOOKMARK [3][-]{subsubsection.2.1.4.5}{Sistemas de recomendaci\363n}{subsection.2.1.4}% 37
+\BOOKMARK [1][-]{section.2.2}{IoE \(Internet of Everything\)}{chapter.2}% 38
+\BOOKMARK [2][-]{subsection.2.2.1}{Antecedentes}{section.2.2}% 39
+\BOOKMARK [3][-]{subsubsection.2.2.1.1}{ IoT \(Internet of Things\) }{subsection.2.2.1}% 40
+\BOOKMARK [3][-]{subsubsection.2.2.1.2}{ Sistemas embebidos }{subsection.2.2.1}% 41
+\BOOKMARK [3][-]{subsubsection.2.2.1.3}{ C\363mputo ubicuo }{subsection.2.2.1}% 42
+\BOOKMARK [2][-]{subsection.2.2.2}{Tendencias}{section.2.2}% 43
+\BOOKMARK [3][-]{subsubsection.2.2.2.1}{ IoE e inteligencia artificial }{subsection.2.2.2}% 44
+\BOOKMARK [3][-]{subsubsection.2.2.2.2}{ IoE y conectividad}{subsection.2.2.2}% 45
+\BOOKMARK [2][-]{subsection.2.2.3}{Ventajas}{section.2.2}% 46
+\BOOKMARK [2][-]{subsection.2.2.4}{Desventajas}{section.2.2}% 47
+\BOOKMARK [2][-]{subsection.2.2.5}{Ejemplos}{section.2.2}% 48
+\BOOKMARK [1][-]{section.2.3}{Mobile Computing}{chapter.2}% 49
+\BOOKMARK [2][-]{subsection.2.3.1}{Dispositivos de computaci\363n m\363vil}{section.2.3}% 50
+\BOOKMARK [3][-]{subsubsection.2.3.1.1}{Asistente digital personal \(PDA\) }{subsection.2.3.1}% 51
+\BOOKMARK [3][-]{subsubsection.2.3.1.2}{Tableta}{subsection.2.3.1}% 52
+\BOOKMARK [3][-]{subsubsection.2.3.1.3}{PC Ultra-M\363vil}{subsection.2.3.1}% 53
+\BOOKMARK [3][-]{subsubsection.2.3.1.4}{Computadoras corporales}{subsection.2.3.1}% 54
+\BOOKMARK [3][-]{subsubsection.2.3.1.5}{Tel\351fono inteligente}{subsection.2.3.1}% 55
+\BOOKMARK [2][-]{subsection.2.3.2}{Antecedentes del tel\351fono inteligente}{section.2.3}% 56
+\BOOKMARK [2][-]{subsection.2.3.3}{Sistemas operativos}{section.2.3}% 57
+\BOOKMARK [3][-]{subsubsection.2.3.3.1}{Symbian}{subsection.2.3.3}% 58
+\BOOKMARK [3][-]{subsubsection.2.3.3.2}{Windows}{subsection.2.3.3}% 59
+\BOOKMARK [3][-]{subsubsection.2.3.3.3}{BlackBerry}{subsection.2.3.3}% 60
+\BOOKMARK [3][-]{subsubsection.2.3.3.4}{iOS}{subsection.2.3.3}% 61
+\BOOKMARK [3][-]{subsubsection.2.3.3.5}{Android}{subsection.2.3.3}% 62
+\BOOKMARK [2][-]{subsection.2.3.4}{Limitaciones}{section.2.3}% 63
+\BOOKMARK [1][-]{section.2.4}{Sistema de posicionamiento en interiores}{chapter.2}% 64
+\BOOKMARK [1][-]{section.2.5}{Beacons Estimote}{chapter.2}% 65
+\BOOKMARK [2][-]{subsubsection.2.5.0.1}{iBeacon y Eddystone}{section.2.5}% 66
+\BOOKMARK [3][-]{subsubsection.2.5.0.2}{Estimote API}{subsubsection.2.5.0.1}% 67
+\BOOKMARK [1][-]{section.2.6}{Marketing}{chapter.2}% 68
+\BOOKMARK [2][-]{subsection.2.6.1}{Marketing de proximidad}{section.2.6}% 69
+\BOOKMARK [2][-]{subsection.2.6.2}{Importancia del marketing de proximidad}{section.2.6}% 70
+\BOOKMARK [2][-]{subsection.2.6.3}{Estrategias de marketing de proximidad}{section.2.6}% 71
+\BOOKMARK [3][-]{subsubsection.2.6.3.1}{Conexi\363n a una red WiFi}{subsection.2.6.3}% 72
+\BOOKMARK [3][-]{subsubsection.2.6.3.2}{Cupones digitales en el lugar}{subsection.2.6.3}% 73
+\BOOKMARK [3][-]{subsubsection.2.6.3.3}{Lectura de c\363digo QR}{subsection.2.6.3}% 74
+\BOOKMARK [3][-]{subsubsection.2.6.3.4}{NFC}{subsection.2.6.3}% 75
+\BOOKMARK [3][-]{subsubsection.2.6.3.5}{Beacons}{subsection.2.6.3}% 76
+\BOOKMARK [1][-]{section.2.7}{Servidor Web as\355ncrono }{chapter.2}% 77
+\BOOKMARK [0][-]{chapter.3}{Bosquejo general de la soluci\363n}{}% 78
+\BOOKMARK [1][-]{section.3.1}{An\341lisis de factibilidad}{chapter.3}% 79
+\BOOKMARK [2][-]{subsection.3.1.1}{Factibilidad t\351cnica}{section.3.1}% 80
+\BOOKMARK [2][-]{subsection.3.1.2}{Factibilidad econ\363mica}{section.3.1}% 81
+\BOOKMARK [1][-]{section.3.2}{Elecci\363n de tecnolog\355as}{chapter.3}% 82
+\BOOKMARK [1][-]{section.3.3}{An\341lisis de riesgos}{chapter.3}% 83
+\BOOKMARK [1][-]{section.3.4}{Arquitectura de la aplicaci\363n}{chapter.3}% 84
+\BOOKMARK [1][-]{section.3.5}{Diccionario de actores}{chapter.3}% 85
+\BOOKMARK [1][-]{section.3.6}{Diagrama de casos de uso general}{chapter.3}% 86
+\BOOKMARK [1][-]{section.3.7}{Requerimientos Funcionales \(RF\)}{chapter.3}% 87
+\BOOKMARK [1][-]{section.3.8}{Requerimientos No Funcionales \(RNF\)}{chapter.3}% 88
+\BOOKMARK [0][-]{chapter.4}{Modelo de datos}{}% 89
+\BOOKMARK [1][-]{section.4.1}{Modelo relacional}{chapter.4}% 90
+\BOOKMARK [1][-]{section.4.2}{Prototipo 1: Dise\361o inicial de la base de datos}{chapter.4}% 91
+\BOOKMARK [2][-]{subsection.4.2.1}{Diccionario de datos}{section.4.2}% 92
+\BOOKMARK [2][-]{subsection.4.2.2}{Modelo de la base de datos}{section.4.2}% 93
+\BOOKMARK [1][-]{section.4.3}{Prototipo 1.1: Modificaciones al modelo de la base de datos}{chapter.4}% 94
+\BOOKMARK [2][-]{subsection.4.3.1}{Modificaciones realizadas}{section.4.3}% 95
+\BOOKMARK [2][-]{subsection.4.3.2}{Diccionario de datos}{section.4.3}% 96
+\BOOKMARK [2][-]{subsection.4.3.3}{Modelo de la base de datos}{section.4.3}% 97
+\BOOKMARK [1][-]{section.4.4}{Prototipo 1.2: Modificaciones al modelo de la base de datos}{chapter.4}% 98
+\BOOKMARK [2][-]{subsection.4.4.1}{Modificaciones realizadas}{section.4.4}% 99
+\BOOKMARK [2][-]{subsection.4.4.2}{Diccionario de datos de entidades modificadas}{section.4.4}% 100
+\BOOKMARK [2][-]{subsection.4.4.3}{Modelo de la base de datos}{section.4.4}% 101
+\BOOKMARK [1][-]{section.4.5}{Prototipo 1.3: Modificaciones al modelo de la base de datos}{chapter.4}% 102
+\BOOKMARK [2][-]{subsection.4.5.1}{Modificaciones realizadas}{section.4.5}% 103
+\BOOKMARK [2][-]{subsection.4.5.2}{Diccionario de datos de entidades modificadas}{section.4.5}% 104
+\BOOKMARK [2][-]{subsection.4.5.3}{Modelo de la base de datos}{section.4.5}% 105
+\BOOKMARK [1][-]{section.4.6}{Prototipo 1.4: Modificaciones al modelo de la base de datos}{chapter.4}% 106
+\BOOKMARK [2][-]{subsection.4.6.1}{Modificaciones realizadas}{section.4.6}% 107
+\BOOKMARK [2][-]{subsection.4.6.2}{Diccionario de datos de entidades modificadas}{section.4.6}% 108
+\BOOKMARK [2][-]{subsection.4.6.3}{Modelo de la base de datos}{section.4.6}% 109
+\BOOKMARK [1][-]{section.4.7}{Prototipo 2: Generador de Registros Artificiales \(GRA\)}{chapter.4}% 110
+\BOOKMARK [2][-]{subsection.4.7.1}{An\341lisis}{section.4.7}% 111
+\BOOKMARK [2][-]{subsection.4.7.2}{Dise\361o}{section.4.7}% 112
+\BOOKMARK [1][-]{section.4.8}{Prototipo 2.1: Generador de Registros Artificiales \(GRA\)}{chapter.4}% 113
+\BOOKMARK [2][-]{subsection.4.8.1}{Modificaciones realizadas}{section.4.8}% 114
+\BOOKMARK [2][-]{subsection.4.8.2}{An\341lisis}{section.4.8}% 115
+\BOOKMARK [2][-]{subsection.4.8.3}{Dise\361o}{section.4.8}% 116
+\BOOKMARK [0][-]{chapter.5}{Aplicaciones m\363viles}{}% 117
+\BOOKMARK [1][-]{section.5.1}{Aplicaci\363n Interactiva Difusora de Productos \(AIDP\)}{chapter.5}% 118
+\BOOKMARK [2][-]{subsection.5.1.1}{Prototipo 1: Dise\361o inicial de la aplicaci\363n}{section.5.1}% 119
+\BOOKMARK [3][-]{subsubsection.5.1.1.1}{An\341lisis}{subsection.5.1.1}% 120
+\BOOKMARK [3][-]{subsubsection.5.1.1.2}{Dise\361o}{subsection.5.1.1}% 121
+\BOOKMARK [2][-]{subsection.5.1.2}{Prototipo 2: Conexi\363n de la AIDP con Beacon}{section.5.1}% 122
+\BOOKMARK [3][-]{subsubsection.5.1.2.1}{An\341lisis}{subsection.5.1.2}% 123
+\BOOKMARK [3][-]{subsubsection.5.1.2.2}{Dise\361o}{subsection.5.1.2}% 124
+\BOOKMARK [2][-]{subsection.5.1.3}{Prototipo 3: Integraci\363n de m\363dulos del sistema}{section.5.1}% 125
+\BOOKMARK [3][-]{subsubsection.5.1.3.1}{An\341lisis}{subsection.5.1.3}% 126
+\BOOKMARK [3][-]{subsubsection.5.1.3.2}{Dise\361o}{subsection.5.1.3}% 127
+\BOOKMARK [2][-]{subsection.5.1.4}{Prototipo 4: Integraci\363n de m\363dulos restantes del sistema}{section.5.1}% 128
+\BOOKMARK [3][-]{subsubsection.5.1.4.1}{An\341lisis}{subsection.5.1.4}% 129
+\BOOKMARK [3][-]{subsubsection.5.1.4.2}{Dise\361o}{subsection.5.1.4}% 130
+\BOOKMARK [1][-]{section.5.2}{Aplicaci\363n Interactiva para el Personal de Ventas \(AIPV\)}{chapter.5}% 131
+\BOOKMARK [2][-]{subsection.5.2.1}{Prototipo 1: Dise\361o inicial de la aplicaci\363n y descubrimiento de Beacons}{section.5.2}% 132
+\BOOKMARK [3][-]{subsubsection.5.2.1.1}{An\341lisis}{subsection.5.2.1}% 133
+\BOOKMARK [3][-]{subsubsection.5.2.1.2}{Dise\361o}{subsection.5.2.1}% 134
+\BOOKMARK [2][-]{subsection.5.2.2}{Prototipo 2: Integraci\363n con Apache Kafka}{section.5.2}% 135
+\BOOKMARK [3][-]{subsubsection.5.2.2.1}{An\341lisis}{subsection.5.2.2}% 136
+\BOOKMARK [3][-]{subsubsection.5.2.2.2}{Dise\361o}{subsection.5.2.2}% 137
+\BOOKMARK [2][-]{subsection.5.2.3}{Prototipo 3: Integraci\363n con servidor \(Detalles y estad\355sticas de clientes y env\355o de recomendaciones\)}{section.5.2}% 138
+\BOOKMARK [3][-]{subsubsection.5.2.3.1}{An\341lisis}{subsection.5.2.3}% 139
+\BOOKMARK [3][-]{subsubsection.5.2.3.2}{Dise\361o}{subsection.5.2.3}% 140
+\BOOKMARK [2][-]{subsection.5.2.4}{Prototipo 4: Prototipo final }{section.5.2}% 141
+\BOOKMARK [3][-]{subsubsection.5.2.4.1}{An\341lisis}{subsection.5.2.4}% 142
+\BOOKMARK [3][-]{subsubsection.5.2.4.2}{Dise\361o}{subsection.5.2.4}% 143
+\BOOKMARK [0][-]{chapter.6}{Servidores}{}% 144
+\BOOKMARK [1][-]{section.6.1}{Node.JS con Express}{chapter.6}% 145
+\BOOKMARK [2][-]{subsection.6.1.1}{Panel de Administraci\363n \(PA\)}{section.6.1}% 146
+\BOOKMARK [2][-]{subsection.6.1.2}{Prototipo 1: Dise\361o inicial del Panel de Administraci\363n}{section.6.1}% 147
+\BOOKMARK [3][-]{subsubsection.6.1.2.1}{An\341lisis}{subsection.6.1.2}% 148
+\BOOKMARK [3][-]{subsubsection.6.1.2.2}{Dise\361o}{subsection.6.1.2}% 149
+\BOOKMARK [2][-]{subsection.6.1.3}{Prototipo 2: Monitor geogr\341fico de beacons}{section.6.1}% 150
+\BOOKMARK [3][-]{subsubsection.6.1.3.1}{An\341lisis}{subsection.6.1.3}% 151
+\BOOKMARK [3][-]{subsubsection.6.1.3.2}{Dise\361o}{subsection.6.1.3}% 152
+\BOOKMARK [2][-]{subsection.6.1.4}{Prototipo 3: Integraci\363n con servicios REST a panel de administraci\363n}{section.6.1}% 153
+\BOOKMARK [3][-]{subsubsection.6.1.4.1}{An\341lisis}{subsection.6.1.4}% 154
+\BOOKMARK [3][-]{subsubsection.6.1.4.2}{Dise\361o}{subsection.6.1.4}% 155
+\BOOKMARK [2][-]{subsection.6.1.5}{Prototipo 4: Integraci\363n de pantalla para ejecutar algoritmo k-means}{section.6.1}% 156
+\BOOKMARK [3][-]{subsubsection.6.1.5.1}{An\341lisis}{subsection.6.1.5}% 157
+\BOOKMARK [3][-]{subsubsection.6.1.5.2}{Dise\361o}{subsection.6.1.5}% 158
+\BOOKMARK [3][-]{subsubsection.6.1.5.3}{Pruebas}{subsection.6.1.5}% 159
+\BOOKMARK [3][-]{subsubsection.6.1.5.4}{Conclusiones}{subsection.6.1.5}% 160
+\BOOKMARK [1][-]{section.6.2}{Tornado}{chapter.6}% 161
+\BOOKMARK [2][-]{subsection.6.2.1}{Sistema de gesti\363n, procesamiento y proveedor de datos de Retail}{section.6.2}% 162
+\BOOKMARK [2][-]{subsection.6.2.2}{Prototipo 1: Desarrollo de servicios REST}{section.6.2}% 163
+\BOOKMARK [3][-]{subsubsection.6.2.2.1}{An\341lisis}{subsection.6.2.2}% 164
+\BOOKMARK [3][-]{subsubsection.6.2.2.2}{Dise\361o}{subsection.6.2.2}% 165
+\BOOKMARK [2][-]{subsection.6.2.3}{Prototipo 2: Integraci\363n de algoritmo de agrupamiento K-medias}{section.6.2}% 166
+\BOOKMARK [3][-]{subsubsection.6.2.3.1}{An\341lisis}{subsection.6.2.3}% 167
+\BOOKMARK [3][-]{subsubsection.6.2.3.2}{Dise\361o}{subsection.6.2.3}% 168
+\BOOKMARK [2][-]{subsection.6.2.4}{Prototipo 3: Integraci\363n de sistema de recomendaci\363n basado en filtrado colaborativo primera versi\363n}{section.6.2}% 169
+\BOOKMARK [3][-]{subsubsection.6.2.4.1}{An\341lisis}{subsection.6.2.4}% 170
+\BOOKMARK [3][-]{subsubsection.6.2.4.2}{Dise\361o}{subsection.6.2.4}% 171
+\BOOKMARK [3][-]{subsubsection.6.2.4.3}{Pruebas}{subsection.6.2.4}% 172
+\BOOKMARK [2][-]{subsection.6.2.5}{Prototipo 4: Integraci\363n de sistema de recomendaci\363n basado en filtrado colaborativo segunda versi\363n}{section.6.2}% 173
+\BOOKMARK [3][-]{subsubsection.6.2.5.1}{An\341lisis}{subsection.6.2.5}% 174
+\BOOKMARK [3][-]{subsubsection.6.2.5.2}{Dise\361o}{subsection.6.2.5}% 175
+\BOOKMARK [2][-]{subsection.6.2.6}{Pruebas}{section.6.2}% 176
+\BOOKMARK [3][-]{subsubsection.6.2.6.1}{Conclusiones}{subsection.6.2.6}% 177
+\BOOKMARK [0][-]{chapter.7}{Conclusiones}{}% 178
+\BOOKMARK [0][-]{chapter.8}{Trabajo a futuro}{}% 179
+\BOOKMARK [1][-]{section.8.1}{Aplicaci\363n Interactiva Difusora de Productos}{chapter.8}% 180
+\BOOKMARK [1][-]{section.8.2}{Aplicaci\363n Interactiva para el Personal de Ventas}{chapter.8}% 181
+\BOOKMARK [1][-]{section.8.3}{Panel de Administraci\363n}{chapter.8}% 182
+\BOOKMARK [1][-]{section.8.4}{Sistema de Recomendaciones}{chapter.8}% 183
+\BOOKMARK [0][-]{chapter.9}{Glosario de t\351rminos}{}% 184
+\BOOKMARK [1][-]{subsection.9.0.1}{Beacons}{chapter.9}% 185
+\BOOKMARK [2][-]{subsubsection.9.0.1.1}{Firmware}{subsection.9.0.1}% 186
+\BOOKMARK [3][-]{subsubsection.9.0.1.2}{Ventajas}{subsubsection.9.0.1.1}% 187
+\BOOKMARK [2][-]{subsection.9.0.2}{Bluetooth Low Energy \(BLE\)}{subsection.9.0.1}% 188
+\BOOKMARK [0][-]{chapter.10}{Acr\363nimos}{}% 189
+\BOOKMARK [0][-]{chapter.11}{Anexos}{}% 190

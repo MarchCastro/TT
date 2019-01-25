@@ -1,0 +1,124 @@
+\title{\textbf{
+Tabla de diccionario de datos Cliente
+}} \\
+
+El cuadro \ref{table:dic4-Cliente} indica la descripción correspondiente a las modificaciones de la entidad Cliente.
+\label{Entidad-Cliente}
+\FloatBarrier
+\begin{table}[htb]
+\setlength\extrarowheight{2pt}
+\begin{tabular}{|p{2.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{5.5cm}|}
+	\hline
+	\multicolumn{2}{|c|} 
+	{{
+		\cellcolor[HTML]{00009B}{\color[HTML]{FFFFFF} Nombre de la relación: }		
+	}} &
+	\multicolumn{4}{|c|} {{ Cliente }} \\
+	\hline
+	\multicolumn{2}{|c|} 
+	{{
+		\cellcolor[HTML]{00009B}{\color[HTML]{FFFFFF} Objetivo: }		
+	}} &
+	\multicolumn{4}{|c|} {{ Tabla que almacenará los datos especificos de un cliente. }} \\
+	\hline
+	\rowcolor[HTML]{3166FF} 
+	{\color[HTML]{FFFFFF} Campo }  & 
+	{\color[HTML]{FFFFFF} Tipo de dato } & 
+	{\color[HTML]{FFFFFF} Tamaño } & 
+	{\color[HTML]{FFFFFF} Constraint } & 
+	{\color[HTML]{FFFFFF} No nulo } & 
+	{\color[HTML]{FFFFFF} Descripción } \\ 
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} id\_cliente } &
+	bigint &
+	20 &
+	PK &
+	X  & 
+	Identificador del cliente.   \\ 
+	\hline 
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} fk\_id\_persona } &
+	bigint &
+	20 &
+	FK &
+	X  & 
+	Identificador de la persona.   \\ 
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} fk\_id\_nivel } &
+	smallint &
+	5 &
+	FK &
+	X  & 
+	Identificador del nivel del cliente.   \\ 
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} no\_hijo } &
+	tinyInt &
+	2 &
+	 &
+	 & 
+	Número de hijos que tiene el cliente.   \\ 
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} gustos } &
+	varchar[] &
+	100 &
+	 &
+	X  & 
+	Gustos de la persona almacenados en un arreglo de longitud 100 cada elemento.   \\ 
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} ultima\_actualizacion\_nivel } &
+	timestamp &
+	 &
+	 &
+	X  & 
+	Fecha de la última actualización del nivel del cliente. \\ 
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} fecha\_registro } &
+	timestamp &
+	 &
+	 &
+	X  & 
+	Fecha en la que se registro el cliente en Sapphire. \\ 
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} puntaje } &
+	smallint &
+	 2 &
+	 &
+	X  & 
+	Puntaje que el cliente tiene actualmente, este puntaje se obtiene por las compras o acciones que realice. \\ 
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} grupo } &
+	smallint &
+	 2 &
+	 &
+	 & 
+	Grupo al que pertenece el cliente. \\ 
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} posicion } &
+	point &
+	 &
+	 &
+	 & 
+	Coordenada en que se encuentra el cliente dentro de la gráfica de clusters. \\ 
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} permisos } &
+	json &
+	  &
+	 &
+	X  & 
+	Lista de permisos que puede otorgar el cliente al sistema para acceder a su información: edad, estado civil, número de hijos, historial de compras, productos favoritos y recibir recompensas presenciales. Valor default : '\{``edad": false,``estado\_civil": false,``hijos": false, ``compras":false,``favoritos": false, ``recom\_presenciales": false\}'.   \\ 
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} thetas } &
+	double[] &
+	  &
+	 &
+	 & 
+	Vector de pesos de un usuario el cuál permite hacer la predicción de una calificación sobre un producto.   \\ 
+	\hline
+	
+	
+\end{tabular}
+
+\caption{Tabla de diccionario de datos Cliente. }
+\label{table:dic4-Cliente}
+\end{table}
+\FloatBarrier
+

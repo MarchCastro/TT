@@ -1,0 +1,85 @@
+\title{\textbf{
+Tabla de diccionario de datos Promoción
+}}\\
+
+El cuadro \ref{table:dic-Promocion} indica la descripción correspondiente de la entidad Promoción.
+\label{Entidad-Promocion}
+\FloatBarrier
+\begin{table}[htb]
+\setlength\extrarowheight{2pt}
+\begin{tabular}{|p{2.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{5.5cm}|}
+	\hline
+	\multicolumn{2}{|c|} 
+	{{
+		\cellcolor[HTML]{00009B}{\color[HTML]{FFFFFF} Nombre de la relación: }		
+	}} &
+	\multicolumn{4}{|c|} {{ Promocion }} \\
+	\hline
+	\multicolumn{2}{|c|} 
+	{{
+		\cellcolor[HTML]{00009B}{\color[HTML]{FFFFFF} Objetivo: }		
+	}} &
+	\multicolumn{4}{|p{10cm}|} {{ Tabla que almacenará la información sobre las promociones que se relacionan con los productos y/o compras. }} \\
+	\hline
+	\rowcolor[HTML]{3166FF} 
+	{\color[HTML]{FFFFFF} Campo }  & 
+	{\color[HTML]{FFFFFF} Tipo de dato } & 
+	{\color[HTML]{FFFFFF} Tamaño } & 
+	{\color[HTML]{FFFFFF} Constraint } & 
+	{\color[HTML]{FFFFFF} No nulo } & 
+	{\color[HTML]{FFFFFF} Descripción } \\ 
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} id\_promocion } &
+	smallint &
+	5 &
+	PK &
+	X  & 
+	Identificador de la promoción.   \\ 
+	\hline
+	
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} gratificacion } &
+	smallint &
+	5 &
+	 &
+	 &
+	Bonificación que tiene el producto o que se puede obtener al compralo.  \\ 
+	\hline
+	
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} producto\_gratis } &
+	smallint &
+	5 &
+	&
+	 & 
+	Indicada si el producto o la compra del mismo se puede obtener de forma gratuita.   \\ 
+	\hline
+	
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} porcentaje } &
+	smallint &
+	5 &
+	 &
+	  & 
+	Porcentaje de descuento que puede tener el producto.   \\ 
+	\hline
+
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} fecha\_inicio } &
+	timestamp &
+	 &
+	&
+	X  & 
+	Fecha a partir de la cual la promoción es válida.   \\ 
+	\hline
+	
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} fecha\_fin } &
+	timestamp &
+	 &
+	&
+	X  & 
+	Fecha a partir de la cual la promoción deja de ser válida.   \\ 
+	\hline
+				
+\end{tabular}
+\caption{Tabla de diccionario de datos Promoción. }
+\label{table:dic-Promocion}
+\end{table}
+\FloatBarrier
+

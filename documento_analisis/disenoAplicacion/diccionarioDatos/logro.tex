@@ -1,0 +1,74 @@
+\title{\textbf{
+Tabla de diccionario de datos Logro
+}} \\
+
+El cuadro \ref{table:dic-Logro} indica la descripción correspondiente de la entidad Logro.
+\label{Entidad-Logro}
+\FloatBarrier
+\begin{table}[htb]
+\setlength\extrarowheight{2pt}
+\begin{tabular}{|p{2.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{5.5cm}|}
+	\hline
+	\multicolumn{2}{|c|} 
+	{{
+		\cellcolor[HTML]{00009B}{\color[HTML]{FFFFFF} Nombre de la relación: }		
+	}} &
+	\multicolumn{4}{|c|} {{ Logro }} \\
+	\hline
+	\multicolumn{2}{|c|} 
+	{{
+		\cellcolor[HTML]{00009B}{\color[HTML]{FFFFFF} Objetivo: }		
+	}} &
+	\multicolumn{4}{|c|} {{ Tabla que almacenará los logros que tendrán disponibles los clientes. }} \\
+	\hline
+	\rowcolor[HTML]{3166FF} 
+	{\color[HTML]{FFFFFF} Campo }  & 
+	{\color[HTML]{FFFFFF} Tipo de dato } & 
+	{\color[HTML]{FFFFFF} Tamaño } & 
+	{\color[HTML]{FFFFFF} Constraint } & 
+	{\color[HTML]{FFFFFF} No nulo } & 
+	{\color[HTML]{FFFFFF} Descripción } \\ 
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} id\_logro } &
+	smallint &
+	5 &
+	PK &
+	X  & 
+	Identificador del logro. \\ 
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} nombre } &
+	varchar &
+	80 &
+	 &
+	X  & 
+	Nombre del logro.   \\ 
+	\hline		
+	
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} descripcion } &
+	text &
+	 &
+	 &
+	X  & 
+	Descripción del logro.   \\ 
+	\hline		
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} icono } &
+	varchar &
+	250 &
+	 &
+	X  & 
+	Ruta en la cuál se encuentra almacenado el icono del logro.   \\ 
+	\hline		
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} recompensa } &
+	varchar &
+	150 &
+	 &
+	X  & 
+	Recompensa que incluye el logro.   \\ 
+	\hline	
+			
+\end{tabular}
+\caption{Tabla de diccionario de datos Logro. }
+\label{table:dic-Logro}
+\end{table}
+\FloatBarrier
+

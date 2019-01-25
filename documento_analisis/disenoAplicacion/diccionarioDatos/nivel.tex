@@ -1,0 +1,59 @@
+\title{\textbf{
+Tabla de diccionario de datos Nivel
+}}\\
+
+El cuadro \ref{table:dic-Nivel} indica la descripción correspondiente de la entidad Nivel.
+\label{Entidad-Nivel}
+\FloatBarrier
+\begin{table}[htb]
+\setlength\extrarowheight{2pt}
+\begin{tabular}{|p{2.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{5.5cm}|}
+	\hline
+	\multicolumn{2}{|c|}
+	{{
+		\cellcolor[HTML]{00009B}{\color[HTML]{FFFFFF} Nombre de la relación: }		
+	}} &
+	\multicolumn{4}{|c|} {{ Nivel }} \\
+	\hline
+	\multicolumn{2}{|c|} 
+	{{
+		\cellcolor[HTML]{00009B}{\color[HTML]{FFFFFF} Objetivo: }		
+	}} &
+	\multicolumn{4}{|p{10cm}|} {{ Tabla que almacenará los niveles de beneficios disponibles para los clientes.}} \\
+	\hline
+	\rowcolor[HTML]{3166FF} 
+	{\color[HTML]{FFFFFF} Campo }  & 
+	{\color[HTML]{FFFFFF} Tipo de dato } & 
+	{\color[HTML]{FFFFFF} Tamaño } & 
+	{\color[HTML]{FFFFFF} Constraint } & 
+	{\color[HTML]{FFFFFF} No nulo } & 
+	{\color[HTML]{FFFFFF} Descripción } \\ 
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} id\_nivel } &
+	smallint &
+	5 &
+	PK &
+	X  & 
+	Identificador del nivel.  \\ 
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} nombre } &
+	varchar &
+	100 &
+	 &
+	X  & 
+	Nombre del nivel.   \\ 
+	\hline
+	\cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} descripcion } &
+	varchar &
+	250 &
+	 &
+	X  & 
+	Descripción breve del nivel.   \\ 
+	\hline		
+			
+\end{tabular}
+\caption{Tabla de diccionario de datos Nivel. }
+\label{table:dic-Nivel}
+\end{table}
+\FloatBarrier
+

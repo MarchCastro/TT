@@ -1,0 +1,35 @@
+\section{Módulo de gestión, procesamiento y proveedor de datos de Retail}
+
+%--------------------------------------------------
+\subsection{Prototipo 1: Desarrollo de servicios REST}
+
+%--------------------------------------------------
+\subsubsection{Análisis}
+
+\title{\textbf{Requerimientos funcionales}}
+
+\FloatBarrier
+\begin{FRequirements}
+
+\FRitem{RFGPPR1}{Conectar con módulos basados en aprendizaje máquina}{
+El sistema se encargará de conectarse con los dos módulos basados en aprendizaje máquina, con el fin de formular una serie de recomendaciones de productos a partir de los ya comprados previamente por el usuario.
+}
+
+\FRitem{RFGPPR2}{Generar módulo clustering}{El módulo conformará diferentes grupos de personas con base en los gustos de estos para posteriormente almacenar dichas agrupaciones en la base de datos. 
+}
+
+\FRitem{RFGPPR3}{Generar módulo de recomendaciones basado en filtrado colaborativo}{
+El módulo tomará los registros almacenados previamente por el módulo de clustering y realizará las recomendaciones basado en las compras de los sujetos pertenecientes al mismo grupo en el que ellos se encuentran.
+}
+
+\FRitem{RFGPPR4}{Proveer token}{
+El sistema recibirá los datos del vendedor con los cuales realiza la autentificación del usuario en el sistema para posteriormente devolver un token a la aplicación.
+}
+
+\end{FRequirements}
+%--------------------------------------------------
+\subsubsection{Diseño}
+
+%--------------------------------------------------
+\subsubsection{Pruebas}
+

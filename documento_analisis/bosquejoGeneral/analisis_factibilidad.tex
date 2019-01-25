@@ -1,0 +1,181 @@
+Este capitulo presenta la explicación de los análisis de factibilidad tanto técnica como económica del proyecto, la arquitectura general del sistema, las arquitecturas de ambas aplicaciones móviles, los componentes o subsistemas que la conforman y los requerimientos funcionales y no funcionales del sistema. 
+%--------------------------------------------------
+\section{Análisis de factibilidad}
+El análisis de factibilidad permite evaluar y determinar si se cuenta o no con los elementos técnicos y económicos necesarios para continuar con el desarrollo de este trabajo y de esta manera tomar la decisión de proceder o no con el proyecto planteado \cite{Factibilidad}. A continuación se muestran los dos análisis realizados.
+\\ \par
+%--------------------------------------------------
+\subsection{Factibilidad técnica}
+La factibilidad técnica nos permite conocer las herramientas tecnológicas con las que ya se cuenta y las que son necesarias para el cumplimiento de los requerimientos solicitados para el trabajo terminal \cite{Factibilidad1}. Como se ha explicado con anterioridad, entre los módulos del proyecto propuesto se encuentra el desarrollo del sistema de recomendaciones, así como aplicaciones móviles que requieren de ciertos componentes de hardware y software de un rendimiento superior al promedio con los cuales se pueda reducir los tiempos de ejecución durante cada prueba que se realice.
+Actualmente el equipo cuenta con el hardware presentado en la parte inferior.
+\\ \par
+\begin{enumerate}[1.]
+    \item Hardware
+    \\ \par
+    Computadora 1:
+		\begin{itemize}
+		\item Procesador Intel Core -i5-8250U
+		\item Memoria RAM (Random Access Memory) 8 GB (GigaByte) 3.4 GHz (GigaHertz)
+		\item Tarjeta NVIDIA GEFORCE 930mx
+		\item Disco Duro 1TB (TeraByte)
+		\\ \par
+    Computadora 2:
+		\item Procesador AMD (Advanced Micro Devices) Rysen 7 1700
+		\item Memoria RAM 16 GB 3.2 GHz
+		\item Tarjeta GTX (Game Tested eXtreme) 1060 Strix DDR5X (Double Data Rate 5 X)
+		\item Disco Duro 1TB
+		\\ \par
+    Computadora 3:
+		\item Procesador Intel Core i5 doble núcleo 2.5 GHz
+		\item Memoria RAM 4GB
+		\item Tarjeta HD (High Definition) Graphics 4000 de Intel
+		\item Disco Duro 500 GB
+		\end{itemize}
+    \item Software
+	\\ \par
+	Modelo de datos
+	\begin{itemize}
+	\item Postgresql, versión: 9.6.8
+	\end{itemize}	    
+    
+    Panel de Administración: 
+    \begin{itemize}
+    \item Node.js , versión: 8.9.4
+    \item Express, versión: 4.15.5
+    \item Pug, versión: 2.0.0
+    \item Angular JS (Angular JavaScript), versión: 1.6.9
+    \item Angular Resource, versión: 1.6.9
+    \item Ngmap, versión: 1.18.4
+    \end{itemize}
+	Módulo de Gestión, Procesamiento  y Proveedor de datos Retail
+	\begin{itemize}
+	\item Python, versión: 3.6.4
+	\item Tornado, versión: 5.0
+	\item queries, versión: 2.0.0
+	\end{itemize}	    
+	Aplicación Interactiva Difusora de Productos
+	\begin{itemize}
+	\item Java, versión:1.8.0\_161
+	\item Android Icecream Sandwich, versión: $\geq$ 4.0
+	\item Facebook-android-sdk, versión: 4.5
+	\item Estimote:proximity-sdk, versión:0.4.1
+	\end{itemize}
+	Aplicación Interactiva para el Personal de Ventas
+	\begin{itemize}
+	\item openjdk, versión: 1.8.0\_152
+	\item Android Jelly Bean, versión: $\geq$ 4.3
+	\item Estimote:proximity-sdk, versión:0.4.1
+	\item gson, versión: 2.8.2
+	\item retrofit, versión: 2.3.0
+	\item butterKnine, versión: 8.8.1
+	\item playServices, versión: 11.8.0
+	\end{itemize}
+\end{enumerate}
+
+
+%--------------------------------------------------
+\subsection{Factibilidad económica}
+Por otro lado, la factibilidad económica nos permitirá estimar tanto los costos de producción del proyecto, que serán divididos en 3 partes, los costos de equipo, los costos de servicios y los sueldos de los empleados que en este caso, son los miembros del equipo; y por otra parte, también se estima el precio en el que finalmente se vendería este sistema \cite{Factibilidad1}.
+\\ \par 
+El cuadro \ref{costos equipo} muestra los costos de equipo necesarios para la realización del sistema propuesto. Para este análisis de costo de equipo, se tomarán en cuenta las 3 computadoras con las que se disponen actualmente, así mismo, se analizará la devaluación de cada uno con respecto al tiempo de desarrollo del proyecto mismo que se ha fijado a 10 meses.
+Se tomará en cuenta que según como hace mención la Ley de Impuesto Sobre la Renta (LISR) en sus artículos 33,34 y 35, la depreciación para equipos de cómputo por año equivale al 30\% del precio inicial  \cite{Factibilidad2}.
+
+\FloatBarrier
+\begin{table}[htb]
+\setlength\extrarowheight{2pt} % for a bit of visual "breathing space"
+\begin{tabularx}{\textwidth}{| >{\centering\arraybackslash}m{1in} | >{\centering\arraybackslash}m{1in} | >{\centering\arraybackslash}m{1in} |C|C|C|}
+\hline
+\textbf{Equipo} & \textbf{Características} &
+\textbf{Valor de adquisición} & \textbf{Depreciación anual} & \textbf{Depreciación a 10 meses} & \textbf{Valor depreciado}
+\\ \hline
+ASUS VivoBook S & Procesador: Intel Core i5-8250U \newline RAM: 8 GB \newline Disco Duro: 1TB & \$15,200.00 & \$3,040.00 & \$2,533.33 & \$12,666.67
+\\ \hline
+Computadora de escritorio & Procesador: AMD Rysen 7 1700 \newline RAM: 16 GB \newline Disco Duro: 1TB & \$37,200.00 & \$7,440.00 & \$6,200.00 & \$31,000.00
+\\ \hline
+MacBook Pro & Procesador: Intel Core -i5 doble núcleo a 2.5 GHz \newline RAM: 4 GB \newline Disco Duro: 500 GB & \$18,000.00 & \$3,600.00 &  \$3,000.00 & \$15,000.00
+\\ \hline
+Beacons & Tipo: Proximidad \newline Duración de batería: 2 años \newline Rango de alcance: 70 metros & $\$1,103.89 \times 3$ \$367.96 c/u & \$39.796  & \$33.16 & \$1,004.40 $\times 3$
+\\ \hline
+ & & & TOTAL & \$12,432.81 & \$59,671.07
+\\ \hline
+\end{tabularx}
+\caption{Cuadro de costos de equipo.}
+\label{costos equipo}
+\end{table}
+\FloatBarrier
+
+El análisis de los costos de servicios abarca como su nombre lo dice, los servicios necesarios y entre ellos algunos que son vitales para concretar de manera adecuada cada prototipo.
+Se tomarán en cuenta 3 servicios principalmente; luz, internet y agua, mismos que se muestran en el cuadro  \ref{table:costosservicios} y para ello, se obtienen las tarifas de industria de las páginas del Sistema de Aguas de la Ciudad de México (SACMEX), la Comisión Federal de Electricidad (CFE) y Teléfonos Mexicanos (TELMEX) \cite{Agua} - \cite{Internet}. En el caso del cobro de la luz, se obtienen los siguientes datos: \\
+
+Una computadora consume en promedio .525 kW/h (kiloWatt por hora), tomando en cuenta que son 8 hrs laborales y a su vez son 5 días a la semana de trabajo durante el mes se obtiene: 0.525kW/h x 8h x 20 días = 84kW/h consumidos en el mes. Según la información encontrada en la página de la CFE, en la categoría tarifaría de "Negocio", la tarifa para el consumo de más de 25kW al mes es de \$3.6 por lo tanto el total a pagar al mes por dicho consumo equivale a $84kW \times \$3.6 = \$302.4$ al mes por computadora.
+\FloatBarrier
+\begin{table}[htb]
+\setlength\extrarowheight{2pt} % for a bit of visual "breathing space"
+\begin{tabularx}{\textwidth}{|C|C|C|}
+\hline
+\textbf{Servicio} & \textbf{Costo Mensual} &
+\textbf{Costo a 10 meses} 
+\\ \hline
+Luz & \$907.20 & \$9072.00
+\\ \hline
+Internet & \$404.84 con impuestos & \$4,048.40
+\\ \hline
+Agua & $\$412.37 \times 2$  /  \$206.185 mes & \$2061.85
+\\ \hline
+Total & - & \$15,182.25
+\\ \hline
+\end{tabularx}
+\caption{Cuadro de costos de servicios. }
+\label{table:costosservicios}
+\end{table}
+\FloatBarrier
+
+En adición, en el cuadro \ref{table:salariosempleados} se muestran los empleados necesarios para el desarrollo del trabajo terminal, los sueldos y el periodo de empleo correspondientes a cada uno de ellos. Como apoyo para obtener los sueldos mensuales, se consultó un sitio Web en el cual se proporcionan el sueldo más alto, medio y más bajo por profesión, y se tomó como referencia el sueldo medio en México \cite{Salarios}.
+
+\FloatBarrier
+\begin{table}[htb]
+\setlength\extrarowheight{2pt} % for a bit of visual "breathing space"
+\begin{tabularx}{\textwidth}{|C|C|C|C|C|C|}
+\hline
+\textbf{Cantidad} & \textbf{Empleado} & \textbf{Sueldo mensual} & \textbf{Sueldo mensual general} & \textbf{Periodo de empleo} & \textbf{Sueldo total} 
+\\ \hline
+2 & Analista & \$7,475.91 & \$14,951.83 & 3 meses & \$44,855.49 
+\\ \hline
+1 & Diseñador & \$7,611.75 & \$7,611.75 & 2 meses & \$15,223.50
+\\ \hline
+2 & Programador back-end & \$4,500.00 & \$9,000.00 & 6 meses & \$54,000.00
+\\ \hline
+2 & Programador front-end  & \$4,747.41 & \$9,494.83 & 6 meses & \$56,968.98
+\\ \hline
+2 & Desarrollador Android  & \$3,489.75 & \$6,979.50 & 6 meses & \$41,877.00
+\\ \hline
+2 & Tester  & \$5,425.25 & \$10,850.50 & 7 meses & \$75,953.50
+\\ \hline
+ &   &  &  & TOTAL & \$288,878.47
+\\ \hline
+\end{tabularx}
+\caption{Cuadro de salarios para empleados requeridos en el proyecto. }
+\label{table:salariosempleados}
+\end{table}
+\FloatBarrier
+
+Finalmente, a partir de toda la información presentada anteriormente, en el cuadro \ref{table:costototal} se muestra el costo total de la aplicación.
+\FloatBarrier
+\begin{table}[htb]
+\setlength\extrarowheight{2pt} % for a bit of visual "breathing space"
+\begin{tabularx}{\textwidth}{|C|C|}
+\hline
+\textbf{Análisis} & \textbf{Costo}
+\\ \hline
+Costo de equipo & \$12,432.81
+\\ \hline
+Costo de servicio & \$15,182.25 
+\\ \hline
+Sueldos & \$288,878.47 
+\\ \hline
+TOTAL & \$316,493.53
+\\ \hline
+\end{tabularx}
+\caption{Cuadro de costo total de la aplicación. }
+\label{table:costototal}
+\end{table}
+\FloatBarrier
